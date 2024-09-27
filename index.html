@@ -35,7 +35,11 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" defer></script>
+
 </head>
 
 
@@ -67,7 +71,8 @@
           <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
           <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a>
           </li>
-          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a>
+          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i>
+              <span>Portfolio</span></a>
           </li>
           <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
           <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
@@ -129,10 +134,13 @@
         <div class="section-title">
           <h2>Introduce</h2>
           <p>
-            Duong Thai Tan, a 21-year-old young man hailing from Soc Trang, is a passionate Information Technology student.
-             Tan is deeply fascinated by technology, especially keyboards and computers. 
-             His friendly personality fosters a positive environment, always ready to help and share his knowledge with others. 
-             Moreover, Tân's creativity and problem-solving abilities serve as constant motivation, propelling him to stand out in the field of Information Technology studies.
+            Duong Thai Tan, a 21-year-old young man hailing from Soc Trang, is a passionate Information Technology
+            student.
+            Tan is deeply fascinated by technology, especially keyboards and computers.
+            His friendly personality fosters a positive environment, always ready to help and share his knowledge with
+            others.
+            Moreover, Tân's creativity and problem-solving abilities serve as constant motivation, propelling him to
+            stand out in the field of Information Technology studies.
           </p>
 
 
@@ -745,7 +753,7 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="sendMessage.php" method="post" id="myForm" role="form" class="php-email-form">
+            <form action="sendMessage.php" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Your Name</label>
@@ -770,7 +778,7 @@
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
               <!-- Add your public key -->
-              <div class="cf-turnstile" data-sitekey="0x4AAAAAAAmlq1HcTM6FEnDv"></div>
+              <div class="cf-turnstile" data-sitekey="0x4AAAAAAAmsySBe4ltDC4CK"></div>
               <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
           </div>

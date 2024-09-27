@@ -9,7 +9,7 @@ require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
 // Define your secret key
-$secretKey = '0x4AAAAAAAmlq2-98NPqbgoIC75PKPPVBKE';
+$secretKey = '0x4AAAAAAAmsyYA-XsHrCqwKuGpr7iCTRqg';
 
 // Get response token from the form
 $responseToken = $_POST['cf-turnstile-response'];
