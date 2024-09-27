@@ -10,6 +10,10 @@ window.onloadTurnstileCallback = function () {
     sitekey: "0x4AAAAAAAmsySBe4ltDC4CK",
     callback: function (token) {
       console.log(`Challenge Success ${token}`);
+      setTimeout(() => {
+        document.querySelector(".container").style.display = "flex";
+                document.getElementById("myCaptcha").style.display = "none"; 
+      }, 2000);
     },
   });
 };

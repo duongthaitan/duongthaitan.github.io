@@ -35,19 +35,14 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" defer></script>
 
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-  
+
 </head>
 
 
 <body>
-<div
-  class="cf-turnstile"
-  data-sitekey="yourSitekey"
-  data-callback="javascriptCallback"
-></div>
-
   <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
@@ -756,7 +751,7 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-              <form method="post" action="/send.php" class="php-email-form">
+            <form method="post" action="/send.php" class="php-email-form">
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Họ và tên</label>
@@ -780,7 +775,7 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Cám ơn bạn đã gửi tin nhắn đến tôi!</div>
               </div>
-       
+
               <div class="cf-turnstile" data-sitekey="0x4AAAAAAAmsySBe4ltDC4CK"></div>
               <div class="text-center">
                 <button type="submit" value="Submit" id="submitButton">Gửi ngay</button>
@@ -794,7 +789,8 @@
     </section>
     <!-- End Contact Section -->
 
-  </main><!-- End #main -->
+  </main>
+  <!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
@@ -808,7 +804,7 @@
         </a>
       </div>
     </div>
-<div id="myCaptcha"></div>
+    <div id="myCaptcha"></div>
 
   </footer><!-- End  Footer -->
 
@@ -825,10 +821,9 @@
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
 </body>
 
 </html>
