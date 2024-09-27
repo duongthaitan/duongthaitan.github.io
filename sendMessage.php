@@ -1,5 +1,13 @@
 <?php
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+// Include PHPMailer
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+
 // Define your secret key
 $secretKey = '0x4AAAAAAAmlq2-98NPqbgoIC75PKPPVBKE';
 
@@ -38,21 +46,36 @@ $result = json_decode($response, true);
 if ($result && isset($result['success']) && $result['success'] === true) {
     // Verification successful, proceed with sending the email
 
-    // Set recipient email address
-    $recipient = 'duongthaitan13@gmail.com';
+    // Instantiate PHPMailer
+    $mail = new PHPMailer(true);
 
-    // Subject
-    $subject = 'Form Submission';
+    try {
+        // Server settings
+        $mail->isSMTP();
+        $mail->Host = 'SMTP Server Address'; // Enter SMTP server address
+        $mail->SMTPAuth = true;
+        $mail->Username = 'SMTP Username'; // Username for SMTP authentication
+        $mail->Password = 'SMTP Password'; // Password for SMTP authentication
+        $mail->Port = 587;
+        $mail->SMTPSecure = 'tls';
 
-    // Message
-    $message = "Name: " . $_POST['name'] . "\n" . "Email: " . $_POST['email'] . "\n" . "Message: " . $_POST['message'];
+        // Set sender (From) with email address and name
+        $mail->setFrom('duongthaitan13@gmail.com', 'Duong Thai Tan');
+        $mail->addAddress('duongthaitan13@gmail.com'); // Add recipient
+        // Content
+        $mail->isHTML(false);
+        $mail->Subject = 'Form Submission';
+        $mail->Body    = "Name: " . $_POST['name'] . "\n" . "Email: " . $_POST['email'] . "\n" . "Message: " . $_POST['message'];
 
-    // Send email
-    if (mail($recipient, $subject, $message)) {
+        $mail->send();
+
+        // Here you can choose between redirection or a simple alert
+
+        //  header("Location: confirmation.html");
         echo '<script>';
         echo 'alert("Email sent successfully");';
         echo '</script>';
-    } else {
+    } catch (Exception $e) {
         echo '<script>';
         echo 'alert("Captcha verification successful, but email could not be sent. Please try again.");';
         echo '</script>';
