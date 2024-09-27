@@ -5,6 +5,16 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
+window.onloadTurnstileCallback = function () {
+  turnstile.render("#myCapcha", {
+    sitekey: "<0x4AAAAAAAmlq1HcTM6FEnDv>",
+    callback: function (token) {
+      console.log(`Challenge Success ${token}`);
+    },
+  });
+};
+
 (function() {
   "use strict";
 

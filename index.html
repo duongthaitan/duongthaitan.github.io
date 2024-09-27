@@ -35,6 +35,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" defer></script>
 </head>
 
 
@@ -744,7 +745,7 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="sendMessage.php" method="post" id="myForm" role="form" class="php-email-form">
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Your Name</label>
@@ -768,6 +769,8 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
+              <!-- Add your public key -->
+              <div class="cf-turnstile" data-sitekey="0x4AAAAAAAmlq1HcTM6FEnDv"></div>
               <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
           </div>
@@ -792,6 +795,8 @@
         </a>
       </div>
     </div>
+
+
   </footer><!-- End  Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
