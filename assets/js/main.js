@@ -11,7 +11,7 @@ window.onloadTurnstileCallback = function () {
     callback: function (token) {
       console.log(`Challenge Success ${token}`);
       setTimeout(() => {
-        document.querySelector(".container").style.display = "flex";
+        document.querySelector(".container").style.display = "";
                 document.getElementById("myCaptcha").style.display = "none"; 
       }, 2000);
     },
