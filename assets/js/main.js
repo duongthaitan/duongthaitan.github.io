@@ -17,6 +17,17 @@ window.onloadTurnstileCallback = function () {
     },
   });
 };
+
+  // Thêm sự kiện khi nhấn vào nút download
+  document.querySelector('.main-btn').addEventListener('click', function (e) {
+    e.preventDefault(); // Ngăn chặn hành động mặc định của thẻ <a> (chuyển trang)
+    // Tạo một thẻ <a> tạm để xử lý tải file xuống
+    const cvLink = document.createElement('a');
+    cvLink.href = this.href; // Đặt đường dẫn đến file từ href của thẻ <a> gốc
+    cvLink.download = "duongthaitan-cv.pdf"; // Đặt tên file khi tải về
+    cvLink.click(); // Thực hiện tải xuống file
+  });
+  
 (function() {
   "use strict";
 
