@@ -5,18 +5,7 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
-window.onloadTurnstileCallback = function () {
-  turnstile.render("#myCaptcha", {
-    sitekey: "0x4AAAAAAAmsySBe4ltDC4CK",
-    callback: function (token) {
-      console.log(`Challenge Success ${token}`);
-      setTimeout(() => {
-        document.querySelector(".container").style.display = "";
-                document.getElementById("myCaptcha").style.display = "none"; 
-      }, 2000);
-    },
-  });
-};
+
 
   // Thêm sự kiện khi nhấn vào nút download
   document.querySelector('.main-btn').addEventListener('click', function (e) {
