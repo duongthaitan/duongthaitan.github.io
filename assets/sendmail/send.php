@@ -12,7 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     require 'PHPMailer/src/SMTP.php';
 
     $mail = new PHPMailer(true);
-
     try {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
@@ -27,7 +26,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $mail->isHTML(false);
         $mail->Subject = $_POST['subject'];
-        $mail->Body    = "Name: " . $_POST['name'] . "\n" . "Email: " . $_POST['email'] . "\n" . "Message: " . $_POST['message'];
+        $mail->Body = "Name: " . $_POST['name'] . "\n" .
+            "Email: " . $_POST['email'] . "\n" .
+            "Message: " . $_POST['message'];
 
         $mail->send();
         echo 'OK';  // Trả về "OK" khi gửi thành công
