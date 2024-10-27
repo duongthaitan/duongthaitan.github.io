@@ -3,6 +3,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 // Kiểm tra phương thức POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Include PHPMailer
@@ -40,5 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 } else {
     http_response_code(405);
-    echo 'Method Not Allowed';
+    echo 'Method Not Allowed. Please ensure you are using POST method.';
 }
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
