@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->SMTPSecure = 'tls';
 
         $mail->setFrom('duongthaitan13@gmail.com', 'Duong Thai Tan');
-        $mail->addAddress('duongthaitan13@gmail.com');
+        $mail->addAddress('duongthaitan13@gmail.com'); // Địa chỉ nhận email
 
         $mail->isHTML(false);
         $mail->Subject = $_POST['subject'];
