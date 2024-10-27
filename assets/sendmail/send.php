@@ -30,9 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->Body    = "Name: " . $_POST['name'] . "\n" . "Email: " . $_POST['email'] . "\n" . "Message: " . $_POST['message'];
 
         $mail->send();
-        echo '<script>alert("Email đã được gửi thành công.");</script>';
+        echo 'OK';  // Trả về "OK" khi gửi thành công
     } catch (Exception $e) {
-        echo '<script>alert("Email không thể gửi. Lỗi: ' . $e->getMessage() . '");</script>';
+        echo 'Email không thể gửi. Lỗi: ' . $e->getMessage();  // Trả về thông báo lỗi
     }
 } else {
     http_response_code(405);
