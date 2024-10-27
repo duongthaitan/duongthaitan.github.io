@@ -7,11 +7,15 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Methods: POST");
+    header("Access-Control-Allow-Headers: Content-Type");
     require 'PHPMailer/src/Exception.php';
     require 'PHPMailer/src/PHPMailer.php';
     require 'PHPMailer/src/SMTP.php';
 
     $mail = new PHPMailer(true);
+
     try {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
@@ -19,21 +23,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->Username = 'duongthaitan13@gmail.com'; // Địa chỉ Gmail
         $mail->Password = 'emuprqnfcmzdxhen'; // Mật khẩu ứng dụng
         $mail->Port = 587;
-        $mail->SMTPSecure = 'tls';
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Corrected encryption method
 
         $mail->setFrom('duongthaitan13@gmail.com', 'Duong Thai Tan');
         $mail->addAddress('duongthaitan13@gmail.com'); // Địa chỉ nhận email
-
         $mail->isHTML(false);
         $mail->Subject = $_POST['subject'];
-        $mail->Body = "Name: " . $_POST['name'] . "\n" .
-            "Email: " . $_POST['email'] . "\n" .
-            "Message: " . $_POST['message'];
+        $mail->Body = "Name: " . $_POST['name'] . "\n" . "Email: " . $_POST['email'] . "\n" . "Message: " . $_POST['message'];
 
         $mail->send();
-        echo 'OK';  // Trả về "OK" khi gửi thành công
+        echo 'OK'; // Trả về "OK" khi gửi thành công
     } catch (Exception $e) {
-        echo 'Email không thể gửi. Lỗi: ' . $e->getMessage();  // Trả về thông báo lỗi
+        echo 'Email không thể gửi. Lỗi: ' . $e->getMessage(); // Trả về thông báo lỗi
     }
 } else {
     http_response_code(405);
