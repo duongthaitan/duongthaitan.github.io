@@ -727,27 +727,29 @@
                 frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
 
             </div>
-
           </div>
 
+
+
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form method="post" action="/assets/sendmail/send.php" class="php-email-form">
+            <form method="post" action="http://localhost/path_to_your_php_file/send.php" class="php-email-form">
+              <!-- Cập nhật đường dẫn -->
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Họ và tên</label>
                   <input type="text" name="name" class="form-control" id="name" required>
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="name">Email</label>
+                  <label for="email">Email</label>
                   <input type="email" class="form-control" name="email" id="email" required>
                 </div>
               </div>
               <div class="form-group">
-                <label for="name">Tiêu đề</label>
+                <label for="subject">Tiêu đề</label>
                 <input type="text" class="form-control" name="subject" id="subject" required>
               </div>
               <div class="form-group">
-                <label for="name">Nội dung</label>
+                <label for="message">Nội dung</label>
                 <textarea class="form-control" name="message" rows="10" required></textarea>
               </div>
               <div class="my-3">
@@ -755,14 +757,13 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Cám ơn bạn đã gửi tin nhắn đến tôi!</div>
               </div>
-              <!-- Thêm reCAPTCHA -->
-              <div class="g-recaptcha" data-sitekey="6Ld-xm0qAAAAAKNDyI0rw4SXpSt4scapfmIk6ywu"></div>
               <div class="text-center">
                 <button type="submit" value="Submit" id="submitButton">Gửi ngay</button>
               </div>
             </form>
           </div>
-          <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
 
 
         </div>
@@ -794,7 +795,6 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -3,22 +3,12 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+// Kiểm tra phương thức POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Include PHPMailer
     require 'PHPMailer/src/Exception.php';
     require 'PHPMailer/src/PHPMailer.php';
     require 'PHPMailer/src/SMTP.php';
-
-    // Kiểm tra reCAPTCHA
-    $recaptcha = $_POST['g-recaptcha-response'];
-    $secret = '6Ld-xm0qAAAAAAOR1suaN9nnuvSbRJqjqET-e_fW9';
-    $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$recaptcha");
-    $responseKeys = json_decode($response, true);
-
-    if (intval($responseKeys["success"]) !== 1) {
-        echo '<script>alert("Vui lòng xác minh reCAPTCHA.");</script>';
-        exit();
-    }
 
     // Khởi tạo PHPMailer
     $mail = new PHPMailer(true);
@@ -28,18 +18,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'duongthaitan13@gmail.com';
-        $mail->Password = 'emuprqnfcmzdxhen';
+        $mail->Username = 'duongthaitan13@gmail.com'; // Địa chỉ Gmail
+        $mail->Password = 'emuprqnfcmzdxhen'; // Mật khẩu ứng dụng
         $mail->Port = 587;
         $mail->SMTPSecure = 'tls';
 
         // Thiết lập thông tin người gửi và người nhận
         $mail->setFrom('duongthaitan13@gmail.com', 'Duong Thai Tan');
-        $mail->addAddress('duongthaitan13@gmail.com');
+        $mail->addAddress('duongthaitan13@gmail.com'); // Người nhận
 
         // Thiết lập nội dung email
-        $mail->isHTML(false);
-        $mail->Subject = 'Form Submission';
+        $mail->isHTML(false); // Gửi email dạng text
+        $mail->Subject = $_POST['subject']; // Tiêu đề từ form
         $mail->Body    = "Name: " . $_POST['name'] . "\n" . "Email: " . $_POST['email'] . "\n" . "Message: " . $_POST['message'];
 
         // Gửi email
