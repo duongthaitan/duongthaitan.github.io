@@ -7,6 +7,29 @@
 */
 
 
+// Khởi tạo EmailJS với User ID của bạn
+(function sendmail () {
+  emailjs.init("H4aPtgUhmXrT1kAG3"); // Thay thế bằng User ID của bạn
+})();
+
+document
+  .getElementById("contactForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault(); // Ngăn chặn việc gửi biểu mẫu mặc định
+
+    emailjs.sendForm("service_txgodb2", "template_f3q43ar", this).then(
+      function () {
+        // Chuyển đến trang success.html khi gửi thành công
+        window.location.href = "success.html";
+      },
+      function (error) {
+        alert("Gửi email thất bại: " + JSON.stringify(error));
+      }
+    );
+  });
+  
+
+  
   // Thêm sự kiện khi nhấn vào nút download
   document.querySelector('.main-btn').addEventListener('click', function (e) {
     e.preventDefault(); // Ngăn chặn hành động mặc định của thẻ <a> (chuyển trang)

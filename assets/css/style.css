@@ -13,6 +13,8 @@
 
 
 :root {
+    --success-primary: #3DC480;
+  --success-secondary: #B8BABB;
   --color-primary: #191d2b;
   --color-secondary: #349ccd;
   --color-white: #FFFFFF;
@@ -1322,4 +1324,5 @@ section {
     padding-right: 20px 15px;
   }
 }
+
 
