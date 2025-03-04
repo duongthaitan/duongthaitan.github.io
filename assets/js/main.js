@@ -17,7 +17,7 @@ document
   .addEventListener("submit", function (event) {
     event.preventDefault(); // Ngăn chặn việc gửi biểu mẫu mặc định
 
-    emailjs.sendForm("service_txgodb2", "template_f3q43ar", this).then(
+    emailjs.sendForm("service_ttwxbhk", "template_f3q43ar", this).then(
       function () {
         // Chuyển đến trang success.html khi gửi thành công
         window.location.href = "success.html";
