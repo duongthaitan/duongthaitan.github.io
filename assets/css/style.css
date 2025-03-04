@@ -385,6 +385,8 @@ h6 {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+
+
 #hero {
   width: 100%;
   height: 100vh;
@@ -493,88 +495,205 @@ section {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
+
+
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* About Section Styling */
+.about {
+    padding: 60px 0;
+    background-color: #f5f9ff;
+}
+
+.about .section-title {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.about .section-title h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #173b6c;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.about .section-title h2::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #149ddd;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.about .section-title p {
+    margin-bottom: 0;
+    color: #555;
+    line-height: 1.6;
+}
+
+.about .content {
+    font-family: 'Poppins', sans-serif;
+}
+
 .about .content h3 {
-  font-weight: 700;
-  font-size: 26px;
-  color: #173b6c;
+    font-weight: 700;
+    font-size: 26px;
+    color: #173b6c;
+    margin-bottom: 20px;
 }
 
-.about .content ul {
-  list-style: none;
-  padding: 0;
+.about .content .intro-text {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 20px;
 }
 
-.about .content ul li {
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
+.about .content .personal-info {
+    list-style: none;
+    padding: 0;
 }
 
-.about .content ul strong {
-  margin-right: 10px;
+.about .content .personal-info li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
 }
 
-.about .content ul i {
-  font-size: 16px;
-  margin-right: 5px;
-  color: #149ddd;
-  line-height: 0;
+.about .content .personal-info li:hover {
+    transform: translateX(10px);
+    color: #149ddd;
 }
 
-.about .content p:last-child {
-  margin-bottom: 0;
+.about .content .personal-info li i {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #149ddd;
+    line-height: 0;
 }
+
+.about .content .personal-info li strong {
+    margin-right: 10px;
+    min-width: 120px;
+    color: #333;
+}
+
+.about .content .personal-info li span {
+    color: #666;
+}
+
+.about .content .personal-info li a {
+    color: #149ddd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.about .content .personal-info li a:hover {
+    color: #2ea3f2;
+    text-decoration: underline;
+}
+
+.about .profile-image {
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about .profile-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+    .about .content .personal-info {
+        margin-top: 20px;
+    }
+}
+
+
+
 
 /*--------------------------------------------------------------
 # Facts
 --------------------------------------------------------------*/
+
+
+/* Nâng cấp hiệu ứng và màu sắc */
 .facts {
   padding-bottom: 30px;
+  background: #f8f9fa;
 }
 
 .facts .count-box {
   padding: 30px;
-  width: 100%;
+  text-align: center;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.facts .count-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .facts .count-box i {
+  font-size: 50px;
   display: block;
-  font-size: 44px;
-  color: #149ddd;
-  float: left;
-  line-height: 0;
+  margin-bottom: 15px;
 }
 
 .facts .count-box span {
-  font-size: 48px;
-  line-height: 40px;
-  display: block;
+  font-size: 50px;
   font-weight: 700;
-  color: #050d18;
-  margin-left: 60px;
+  display: block;
+  color: #0056b3;
 }
 
 .facts .count-box p {
-  padding: 15px 0 0 0;
-  margin: 0 0 0 60px;
-  font-family: "Raleway", sans-serif;
-  font-size: 14px;
-  color: #122f57;
+  font-size: 16px;
+  color: #555;
+  margin-top: 10px;
 }
 
-.facts .count-box a {
-  font-weight: 600;
-  display: block;
-  margin-top: 20px;
-  color: #122f57;
-  font-size: 15px;
-  font-family: "Poppins", sans-serif;
-  transition: ease-in-out 0.3s;
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
-.facts .count-box a:hover {
-  color: #1f5297;
+/* Icon Gradient */
+.gradient-icon {
+  display: inline-block;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
+/* Hiệu ứng hover nâng cao */
+.transform-on-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.transform-on-hover:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
 
 /*--------------------------------------------------------------
 # Akills
