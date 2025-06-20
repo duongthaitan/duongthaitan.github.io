@@ -27,8 +27,10 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
+  <link href="assets/css/back-to-top.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
-  <link href="assets/css/style.scss" rel="stylesheet">
+  <link href="assets/css/loadingPage.css" rel="stylesheet">
+    <link href="assets/css/cursor.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -42,10 +44,25 @@
 
   <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
 </head>
 
 
 <body>
+
+   
+
+
+
+
+
+
+
+
+ <div id="canvas-container"></div>
+    <div class="cursor" id="cursor"></div>
+    
   <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
@@ -81,8 +98,16 @@
         </ul>
       </nav>
     </div>
-  </header><!-- End Header -->
+  </header>
+  <!-- End Header -->
 
+
+
+
+
+
+
+  
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
@@ -103,8 +128,67 @@
       </div>
     </div>
   </section>
-
   <!-- End Hero -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <!-- Floating Stars Background -->
+        <div class="stars-background"></div>
+        
+        <!-- Galaxy Animation -->
+        <div class="galaxy-container">
+            <!-- Central Star -->
+            <div class="central-star"></div>
+            
+            <!-- Orbit Paths with Planets -->
+            <div class="orbit orbit-1">
+                <div class="planet planet-1"></div>
+            </div>
+            
+            <div class="orbit orbit-2">
+                <div class="planet planet-2"></div>
+            </div>
+            
+            <div class="orbit orbit-3">
+                <div class="planet planet-3"></div>
+            </div>
+            
+            <div class="orbit orbit-4">
+                <div class="planet planet-4"></div>
+            </div>
+            
+            <div class="orbit orbit-5">
+                <div class="planet planet-5"></div>
+            </div>
+        </div>
+        
+        <!-- Loading Text -->
+        <div class="loading-text">LOADING UNIVERSE</div>
+        
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        
+        <!-- Loading Percentage -->
+        <div class="loading-percentage" id="loadingPercentage">0%</div>
+    </div>
+
+   
 
   <main id="main">
 
@@ -112,14 +196,14 @@
       <div class="container">
         <div class="section-title">
           <h2>Giới thiệu về bản thân</h2>
-          <p>
+          <!-- <p>
             Duong Thai Tan, một chàng trai 21 tuổi đến từ Sóc Trăng, là một sinh viên Công nghệ Thông tin đầy đam mê.
             Tan rất say mê công nghệ, đặc biệt là bàn phím và máy tính.
             Tính cách thân thiện của anh tạo nên một môi trường tích cực, luôn sẵn sàng giúp đỡ và chia sẻ kiến thức với
             mọi người.
             Hơn nữa, sự sáng tạo và khả năng giải quyết vấn đề của Tân luôn là động lực thúc đẩy anh nổi bật trong lĩnh
             vực học tập Công nghệ Thông tin.
-          </p>
+          </p> -->
         </div>
         <div class="row">
           <div class="col-lg-4 profile-image-container" data-aos="fade-right">
@@ -189,39 +273,98 @@
 
 
     <!-- Services -->
-    <div id="services" class="basic-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="h2-heading">Offered services</h2>
-                    <p class="p-heading">Web design and development have been my bread and butter for more than 5 years. During that time I've discovered that I can help startups and companies with the following services</p>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="text-box">
-                        <i class="far fa-gem"></i>
-                        <h4>DESIGN</h4>
-                        <p>Successful online projects start with good design. It establishes a solid foundation for future development and allows for long term growth</p>
-                    </div> <!-- end of text-box -->
-                </div> <!-- end of col -->
-                <div class="col-lg-4">
-                    <div class="text-box">
-                        <i class="fas fa-code"></i>
-                        <h4>DEVELOPMENT</h4>
-                        <p>I can code my own designs or even use the customer's design as base. My focus is to generate clean code that's well structured for reliability</p>
-                    </div> <!-- end of text-box -->
-                </div> <!-- end of col -->
-                <div class="col-lg-4">
-                    <div class="text-box">
-                        <i class="fas fa-tv"></i>
-                        <h4>BASIC SEO</h4>
-                        <p>i can setup your project to use basic SEO principles which will push your project to the first page on search engines and save you ads money</p>
-                    </div> <!-- end of text-box -->
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of basic-2 -->
+<!-- Services Section -->
+<div id="services" class="services-section">
+    <div class="container">
+        <div class="services-header">
+            <h2 class="section-title">Services</h2>
+            <p class="section-subtitle">
+                Crafting digital experiences with cutting-edge technology and innovative design. 
+                Specialized in modern web development solutions that drive results and exceed expectations.
+            </p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="code-background">
+function createDesign() {
+  const innovation = true;
+  const creativity = 100;
+  return { innovation, creativity };
+}
+
+class UIDesigner {
+  constructor() {
+    this.skills = ['Figma', 'Adobe XD'];
+    this.passion = 'User Experience';
+  }
+}</div>
+                <div class="service-icon">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <h4 class="service-title">UI/UX DESIGN</h4>
+                <p class="service-description">
+                    Creating intuitive and visually stunning interfaces that captivate users. 
+                    From wireframes to pixel-perfect designs, every element is crafted with purpose and precision.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="code-background">
+const developer = {
+  languages: ['JavaScript', 'React', 'Node.js'],
+  expertise: 'Full-Stack Development',
+  mission: 'Clean, Scalable Code'
+};
+
+async function buildApplication() {
+  return await innovation.create();
+}</div>
+                <div class="service-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h4 class="service-title">DEVELOPMENT</h4>
+                <p class="service-description">
+                    Building robust, scalable applications with modern technologies. 
+                    Focus on clean architecture, performance optimization, and maintainable code structures.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="code-background">
+const seoStrategy = {
+  keywords: 'optimized',
+  performance: 'lightning-fast',
+  ranking: 'top-results'
+};
+
+function optimizeForSearch() {
+  return seoStrategy.execute();
+}</div>
+                <div class="service-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h4 class="service-title">SEO OPTIMIZATION</h4>
+                <p class="service-description">
+                    Implementing advanced SEO strategies to boost your online visibility. 
+                    Technical optimization, content strategy, and performance enhancement for better rankings.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating particles -->
+    <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="particle" style="left: 20%; animation-delay: 1s;"></div>
+    <div class="particle" style="left: 30%; animation-delay: 2s;"></div>
+    <div class="particle" style="left: 40%; animation-delay: 3s;"></div>
+    <div class="particle" style="left: 50%; animation-delay: 4s;"></div>
+    <div class="particle" style="left: 60%; animation-delay: 5s;"></div>
+    <div class="particle" style="left: 70%; animation-delay: 0.5s;"></div>
+    <div class="particle" style="left: 80%; animation-delay: 1.5s;"></div>
+    <div class="particle" style="left: 90%; animation-delay: 2.5s;"></div>
+</div>
+<!-- End Services Section -->
     <!-- end of services -->
 
 
@@ -702,8 +845,17 @@
 
   </footer><!-- End  Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+ <!-- Planet Back-to-Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <div class="orbit-trail"></div>
+        <div class="orbit-container">
+            <div class="planet">
+                <div class="planet-arrow">↑</div>
+            </div>
+        </div>
+    </div>
+
+
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -718,6 +870,10 @@
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/back-to-top.js"></script>
+  <script src="assets/js/loadingPage.js"></script>
+  <script src="assets/js/success.js"></script>
+  <script src="assets/js/cursor.js"></script>
 </body>
 
 </html>
