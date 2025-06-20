@@ -1,4 +1,4 @@
-    
+
         // Device detection
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
         const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;

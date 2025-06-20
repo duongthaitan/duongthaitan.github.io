@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(updateProgress, Math.random() * 200 + 100);
     } else {
       // Loading complete
-      setTimeout(hideLoadingScreen, 500);
+      setTimeout(hideLoadingScreen, 100);
     }
   }
 
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
       loadingScreen.style.display = "none";
       mainContent.classList.add("show");
-    }, 1500);
+    }, 1000);
   }
 
   // Initialize
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (dust.parentNode) {
           dust.remove();
         }
-      }, 16000);
+      }, 15000);
     }
-  }, 2000);
+  }, 1000);
 });
