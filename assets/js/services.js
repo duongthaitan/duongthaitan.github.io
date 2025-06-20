@@ -1,15 +1,9 @@
 // Enhanced Services Section JavaScript
 document.addEventListener('DOMContentLoaded', function() {
     const cards = document.querySelectorAll('.service-card');
-    const particles = document.querySelectorAll('.particle');
-    const colors = ['#7877c6', '#ff6784', '#00d4ff'];
+
     
-    // Add random colors to particles
-    particles.forEach(particle => {
-        const randomColor = colors[Math.floor(Math.random() * colors.length)];
-        particle.style.background = randomColor;
-        particle.style.boxShadow = `0 0 10px ${randomColor}`;
-    });
+
 
     // Card interaction effects
     cards.forEach(card => {

@@ -630,11 +630,11 @@ h6 {
   left: 0;
   bottom: 0;
   width: 300px;
-  transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 1s;
   z-index: 9997;
   transition: all 0.5s;
   padding: 0 15px;
-  background: #040b14;
+  /* background: #040b14; */
   overflow-y: auto;
 }
 
@@ -695,6 +695,7 @@ h6 {
 @media (max-width: 1199px) {
   #header {
     left: -300px;
+    background: #040b14;
   }
 
   #main {
@@ -798,7 +799,7 @@ section {
   overflow: hidden;
 }
 
-ư .section-title {
+.section-title {
   padding-bottom: 30px;
 }
 
@@ -860,20 +861,18 @@ section {
   left: 50%;
   transform: translateX(-50%);
 }
-d .about .content {
-  font-family: "Poppins", sans-serif;
-}
+
 
 .about .content h3 {
   font-weight: 700;
   font-size: 26px;
-  color: #173b6c;
+  color: #149ddd;
   margin-bottom: 20px;
 }
 
 .about .content .intro-text {
   font-style: italic;
-  color: #666;
+  color: #a0a0a0;
   margin-bottom: 20px;
 }
 
@@ -883,13 +882,17 @@ d .about .content {
 }
 
 .about .content .personal-info li {
-  margin-bottom: 15px;
   display: flex;
   align-items: center;
-  transition: transform 0.3s ease;
+  margin-bottom: 15px;
 }
 
-.about .content .personal-info li:hover {
+.about .content .personal-info li span {
+  transition: transform 0.4s ease-in-out, color 0.4s ease-in-out;
+  will-change: transform, color;
+}
+
+.about .content .personal-info li span:hover {
   transform: translateX(10px);
   color: #149ddd;
 }
@@ -904,16 +907,16 @@ d .about .content {
 .about .content .personal-info li strong {
   margin-right: 10px;
   min-width: 120px;
-  color: #333;
+  color: #149ddd;
 }
 
 .about .content .personal-info li span {
-  color: #666;
+  color: #a0a0a0;
 }
 
 .about .content .personal-info li a {
-  color: #149ddd;
-  text-decoration: none;
+  
+  text-decoration: inline;
   transition: color 0.3s ease;
 }
 
@@ -976,8 +979,10 @@ d .about .content {
 .profile-image-wrapper:hover .profile-image-front img,
 .profile-image-wrapper:hover .profile-image-back img {
   transform: scale(1.05);
-  filter: drop-shadow(0 0 8px #0d0d0d) drop-shadow(0 0 12px #0d0d0d)
-    drop-shadow(0 0 18px #1a1a2e);
+  filter: 
+  drop-shadow(0 0 4px #0d0d0d) 
+  drop-shadow(0 0 8px #0d0d0d)
+  drop-shadow(0 0 12px #0d0d0d);
 }
 
 /* Tooltip hướng dẫn */
@@ -1400,21 +1405,21 @@ d .about .content {
 /********************/
 /* Modern Services Section Styles */
 
-.services-section {
+.services {
   position: relative;
   padding: 120px 0;
   background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
   overflow: hidden;
 }
 
-.services-section::before {
+.services::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(
+  /* background: radial-gradient(
       circle at 20% 20%,
       rgba(120, 119, 198, 0.1) 0%,
       transparent 50%
@@ -1429,7 +1434,7 @@ d .about .content {
       rgba(120, 119, 198, 0.05) 0%,
       transparent 50%
     );
-  animation: backgroundFloat 20s ease-in-out infinite;
+  animation: backgroundFloat 20s ease-in-out infinite; */
 }
 
 @keyframes backgroundFloat {
@@ -1457,18 +1462,16 @@ d .about .content {
 }
 
 .services-header::before {
-  content: "</>";
   position: absolute;
   top: -40px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 24px;
   color: #7877c6;
-  font-family: "Courier New", monospace;
   opacity: 0.6;
 }
 
-.section-title {
+.section-title  {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 800;
   background: linear-gradient(135deg, #7877c6, #ff6784, #00d4ff);
@@ -1517,7 +1520,6 @@ d .about .content {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
   cursor: pointer;
-  group: hover;
 }
 
 .service-card::before {
@@ -1670,7 +1672,6 @@ d .about .content {
   right: 0;
   bottom: 0;
   opacity: 0.03;
-  font-family: "Courier New", monospace;
   font-size: 12px;
   line-height: 1.4;
   color: #7877c6;
@@ -1680,37 +1681,11 @@ d .about .content {
   pointer-events: none;
 }
 
-/* Floating particles */
-.particle {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: #7877c6;
-  border-radius: 50%;
-  opacity: 0.6;
-  animation: float 6s infinite linear;
-}
 
-@keyframes float {
-  0% {
-    transform: translateY(100vh) rotate(0deg);
-    opacity: 0;
-  }
-  10% {
-    opacity: 0.6;
-  }
-  90% {
-    opacity: 0.6;
-  }
-  100% {
-    transform: translateY(-100px) rotate(360deg);
-    opacity: 0;
-  }
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .services-section {
+  .services {
     padding: 80px 0;
   }
 
@@ -2077,7 +2052,6 @@ d .about .content {
   bottom: 0;
   width: 300px;
   z-index: 9999;
-  background: #040b14;
 }
 
 #footer .copyright {
