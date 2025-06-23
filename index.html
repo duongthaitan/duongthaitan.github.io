@@ -1,688 +1,766 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Portfolio | Duong Thai Tan</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
 
-  <title>Portfolio | Duong Thai Tan</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet" />
 
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet" />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet" />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet" />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="assets/css/back-to-top.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/skills.css" rel="stylesheet" />
+    <link href="assets/css/loadingPage.css" rel="stylesheet" />
+    <link href="assets/css/cursor.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet" />
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/back-to-top.css" rel="stylesheet">
-  <link href="assets/css/style.css" rel="stylesheet">
-  <link href="assets/css/skills.css" rel="stylesheet">
-  <link href="assets/css/loadingPage.css" rel="stylesheet">
-    <link href="assets/css/cursor.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script
+      src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback"
+      defer></script>
 
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" defer></script>
+    <script
+      src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+      async
+      defer></script>
 
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
-  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  </head>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
-</head>
-
-
-<body>
-
-   
-
-
-
-
-
-
-
+  <body>
     <div class="cursor" id="cursor"></div>
-    
-  <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="d-flex flex-column">
+    <!-- ======= Mobile nav toggle button ======= -->
+    <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
-      <div class="profile">
-        <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Duong Thai Tan</a></h1>
-        <div class="social-links mt-3 text-center">
-          <a href="https://www.facebook.com/TanHipp" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="https://www.instagram.com/thaitan.duong_" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="www.linkedin.com/in/duongthaitan" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-          <a href="https://github.com/duongthaitan" class="github"><i class="bx bxl-github"></i></a>
-          <!-- <a href="#" class="twitter"><i class="bx bxl-"></i></a>
+    <!-- ======= Header ======= -->
+    <header id="header">
+      <div class="d-flex flex-column">
+        <div class="profile">
+          <img
+            src="assets/img/profile-img.jpg"
+            alt=""
+            class="img-fluid rounded-circle" />
+          <h1 class="text-light"><a href="index.html">Duong Thai Tan</a></h1>
+          <div class="social-links mt-3 text-center">
+            <a href="https://www.facebook.com/TanHipp" class="facebook"
+              ><i class="bx bxl-facebook"></i
+            ></a>
+            <a href="https://www.instagram.com/thaitan.duong_" class="instagram"
+              ><i class="bx bxl-instagram"></i
+            ></a>
+            <a href="www.linkedin.com/in/duongthaitan" class="linkedin"
+              ><i class="bx bxl-linkedin"></i
+            ></a>
+            <a href="https://github.com/duongthaitan" class="github"
+              ><i class="bx bxl-github"></i
+            ></a>
+            <!-- <a href="#" class="twitter"><i class="bx bxl-"></i></a>
           <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a> -->
-        </div>
-      </div>
-
-      <nav id="navbar" class="nav-menu navbar">
-        <ul>
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Trang chủ</span></a>
-          </li>
-          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Thông tin</span></a></li>
-          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Kinh nghiệm</span></a>
-          </li>
-          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i>
-              <span>Dự án</span></a>
-          </li>
-          <!-- <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li> -->
-          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Liên hệ</span></a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <!-- End Header -->
-
-
-
-
-
-
-
-  
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <h1>Duong Thai Tan</h1>
-
-      <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p>
-
-      <div class="overlay" id="overlay">
-        <div class="loader"></div>
-      </div>
-
-      <div class="btn-con">
-        <!-- Nút tải xuống CV -->
-        <a href="assets/cv/Information.pdf" class="main-btn" download="duongthaitan-cv.pdf">
-          <span class="btn-text">Tải xuống CV</span>
-          <span class="btn-icon"><i class="fas fa-download"></i></span>
-        </a>
-      </div>
-    </div>
-  </section>
-  <!-- End Hero -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
-        <!-- Floating Stars Background -->
-        <div class="stars-background"></div>
-        
-        <!-- Galaxy Animation -->
-        <div class="galaxy-container">
-            <!-- Central Star -->
-            <div class="central-star"></div>
-            
-            <!-- Orbit Paths with Planets -->
-            <div class="orbit orbit-1">
-                <div class="planet planet-1"></div>
-            </div>
-            
-            <div class="orbit orbit-2">
-                <div class="planet planet-2"></div>
-            </div>
-            
-            <div class="orbit orbit-3">
-                <div class="planet planet-3"></div>
-            </div>
-            
-            <div class="orbit orbit-4">
-                <div class="planet planet-4"></div>
-            </div>
-            
-            <div class="orbit orbit-5">
-                <div class="planet planet-5"></div>
-            </div>
-        </div>
-        
-        <!-- Loading Text -->
-        <div class="loading-text">LOADING UNIVERSE</div>
-        
-        <!-- Progress Bar -->
-        <div class="progress-container">
-            <div class="progress-bar" id="progressBar"></div>
-        </div>
-        
-        <!-- Loading Percentage -->
-        <div class="loading-percentage" id="loadingPercentage">0%</div>
-    </div>
-
-   
-
-  <main id="main">
-
-    
-<section id="about" class="about">
-    <div class="container">
-        <div class="section-title">
-            <h2 class="section-title">Giới thiệu về bản thân</h2>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 profile-image-container" data-aos="fade-right">
-                <!-- Đơn giản - chỉ cần click vào div này -->
-                <div class="profile-image-wrapper" tabindex="0" onclick="this.classList.toggle('flipped')">
-                    <!-- Mặt trước -->
-                    <div class="profile-image-front">
-                        <img src="assets/img/avatar-profile-img.jpg" alt="Ảnh chính - Dương Thái Tân">
-                    </div>
-                    
-                    <!-- Mặt sau -->
-                    <div class="profile-image-back">
-                        <img src="assets/img/avatar-profile-img-back.jpg" alt="Ảnh phụ - Dương Thái Tân">
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-                <h3>Developer | Designer | Photographer</h3>
-                <p class="intro-text">Thông tin cơ bản về tôi</p>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <ul class="personal-info">
-                            <li>
-                                <i class="bi bi-calendar-event"></i>
-                                <strong>Ngày sinh:</strong>
-                                <span>18 Tháng 8</span>
-                            </li>
-                            <li>
-                                <i class="bi bi-globe"></i>
-                                <strong>Website:</strong>
-                                <span><a href="https://www.tanhipp.id.vn/">www.tanhipp.id.vn</a></span>
-                            </li>
-                            <li>
-                                <i class="bi bi-telephone"></i>
-                                <strong>Điện thoại:</strong>
-                                <span>+84 3366 xx xx</span>
-                            </li>
-                            <li>
-                                <i class="bi bi-geo-alt"></i>
-                                <strong>Thành phố:</strong>
-                                <span>Sóc Trăng, Việt Nam</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6">
-                        <ul class="personal-info">
-                            <li>
-                                <i class="bi bi-person"></i>
-                                <strong>Tuổi:</strong>
-                                <span>21</span>
-                            </li>
-                            <li>
-                                <i class="bi bi-award"></i>
-                                <strong>Trình độ:</strong>
-                                <span>Sinh viên</span>
-                            </li>
-                            <li>
-                                <i class="bi bi-envelope"></i>
-                                <strong>Email:</strong>
-                                <span>duongthaitan13@gmail.com</span>
-                            </li>
-                            <li>
-                                <i class="bi bi-briefcase"></i>
-                                <strong>Freelance:</strong>
-                                <span>Sẵn sàng</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
- 
-<!-- Services Section -->
-<section id="services" class="services-section">
-    <div class="container">
-        <div class="services-header">
-            <h2 class="section-title">Services</h2>
-            <p class="section-subtitle">
-                Crafting digital experiences with cutting-edge technology and innovative design. 
-                Specialized in modern web development solutions that drive results and exceed expectations.
-            </p>
-        </div>
-
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="code-background">
-function createDesign() {
-  const innovation = true;
-  const creativity = 100;
-  return { innovation, creativity };
-}
-
-class UIDesigner {
-  constructor() {
-    this.skills = ['Figma', 'Adobe XD'];
-    this.passion = 'User Experience';
-  }
-}</div>
-                <div class="service-icon">
-                    <i class="fas fa-palette"></i>
-                </div>
-                <h4 class="service-title">UI/UX DESIGN</h4>
-                <p class="service-description">
-                    Creating intuitive and visually stunning interfaces that captivate users. 
-                    From wireframes to pixel-perfect designs, every element is crafted with purpose and precision.
-                </p>
-            </div>
-
-            <div class="service-card">
-                <div class="code-background">
-const developer = {
-  languages: ['JavaScript', 'React', 'Node.js'],
-  expertise: 'Full-Stack Development',
-  mission: 'Clean, Scalable Code'
-};
-
-async function buildApplication() {
-  return await innovation.create();
-}</div>
-                <div class="service-icon">
-                    <i class="fas fa-code"></i>
-                </div>
-                <h4 class="service-title">DEVELOPMENT</h4>
-                <p class="service-description">
-                    Building robust, scalable applications with modern technologies. 
-                    Focus on clean architecture, performance optimization, and maintainable code structures.
-                </p>
-            </div>
-
-            <div class="service-card">
-                <div class="code-background">
-const seoStrategy = {
-  keywords: 'optimized',
-  performance: 'lightning-fast',
-  ranking: 'top-results'
-};
-
-function optimizeForSearch() {
-  return seoStrategy.execute();
-}</div>
-                <div class="service-icon">
-                    <i class="fas fa-rocket"></i>
-                </div>
-                <h4 class="service-title">SEO OPTIMIZATION</h4>
-                <p class="service-description">
-                    Implementing advanced SEO strategies to boost your online visibility. 
-                    Technical optimization, content strategy, and performance enhancement for better rankings.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Floating particles -->
-    <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
-    <div class="particle" style="left: 20%; animation-delay: 1s;"></div>
-    <div class="particle" style="left: 30%; animation-delay: 2s;"></div>
-    <div class="particle" style="left: 40%; animation-delay: 3s;"></div>
-    <div class="particle" style="left: 50%; animation-delay: 4s;"></div>
-    <div class="particle" style="left: 60%; animation-delay: 5s;"></div>
-    <div class="particle" style="left: 70%; animation-delay: 0.5s;"></div>
-    <div class="particle" style="left: 80%; animation-delay: 1.5s;"></div>
-    <div class="particle" style="left: 90%; animation-delay: 2.5s;"></div>
-</section>
-<!-- End Services Section -->
-    <!-- end of services -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Projects -->
-    <div id="projects" class="basic-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="h2-heading">Delivered projects</h2>
-                    <p class="p-heading">Listed below are some of the most representative projects I've worked on. They range from basic web design for presentation sites to advanced web development for online shops</p>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="text-container">
-                        <div class="image-container">
-                            <a href="project.html">
-                                <img class="img-fluid" src="/assets/images/project-1.jpg" alt="alternative">
-                            </a>
-                        </div> <!-- end of image-container -->
-                        <p><strong>For:</strong> Jumbotron, <strong>Project:</strong> web design for their corporate websites and landing pages for marketing campaigns <a class="blue" href="project.html">details</a></p>
-                    </div> <!-- end of text-container -->
-                    <div class="text-container">
-                        <div class="image-container">
-                            <a href="project.html">
-                                <img class="img-fluid" src="/assets/images/project-2.jpg" alt="alternative">
-                            </a>
-                        </div> <!-- end of image-container -->
-                        <p><strong>For:</strong> Carsrepo, <strong>Project:</strong> designed and developed modern platform for purchasing second hand cars online <a class="blue" href="project.html">details</a></p>
-                    </div> <!-- end of text-container -->
-                    <div class="text-container">
-                        <div class="image-container">
-                            <a href="project.html">
-                                <img class="img-fluid" src="/assets/images/project-3.jpg" alt="alternative">
-                            </a>
-                        </div> <!-- end of image-container -->
-                        <p><strong>For:</strong> Truevideo, <strong>Project:</strong> created a custom video editing and upload web app for this awesome team <a class="blue" href="project.html">details</a></p>
-                    </div> <!-- end of text-container -->
-                    <div class="text-container">
-                        <div class="image-container">
-                            <a href="project.html">
-                                <img class="img-fluid" src="/assets/images/project-4.jpg" alt="alternative">
-                            </a>
-                        </div> <!-- end of image-container -->
-                        <p><strong>For:</strong> Evolosim, <strong>Project:</strong> complete redesign of their corporate website and platform update for their online shop <a class="blue" href="project.html">details</a></p>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of basic-3 -->
-    <!-- end of projects -->
-
-
-    <!-- Works -->
-    <div class="basic-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="text-container">
-                        <div class="image-container">
-                            <a href="project.html">
-                                <img class="img-fluid" src="/assets/images/work-1.jpg" alt="alternative">
-                            </a>
-                        </div> <!-- end of image-container -->
-                        <p><strong>For:</strong> Zigoland, <strong>Project:</strong> started a new website from ground up for a new product <a class="blue" href="project.html">details</a></p>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-                <div class="col-lg-4">
-                    <div class="text-container">
-                        <div class="image-container">
-                            <a href="project.html">
-                                <img class="img-fluid" src="/assets/images/work-2.jpg" alt="alternative">
-                            </a>
-                        </div> <!-- end of image-container -->
-                        <p><strong>For:</strong> Visodream, <strong>Project:</strong> developed a new forum for the Visodream community <a class="blue" href="project.html">details</a></p>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-                <div class="col-lg-4">
-                    <div class="text-container">
-                        <div class="image-container">
-                            <a href="project.html">
-                                <img class="img-fluid" src="/assets/images/work-3.jpg" alt="alternative">
-                            </a>
-                        </div> <!-- end of image-container -->
-                        <p><strong>For:</strong> Primoday, <strong>Project:</strong> complete redesign of their corporate website and platform <a class="blue" href="project.html">details</a></p>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="text-container">
-                        <div class="image-container">
-                            <a href="project.html">
-                                <img class="img-fluid" src="/assets/images/work-4.jpg" alt="alternative">
-                            </a>
-                        </div> <!-- end of image-container -->
-                        <p><strong>For:</strong> Nextlite, <strong>Project:</strong> created a custom video editing and upload web app <a class="blue" href="project.html">details</a></p>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-                <div class="col-lg-4">
-                    <div class="text-container">
-                        <div class="image-container">
-                            <a href="project.html">
-                                <img class="img-fluid" src="/assets/images/work-5.jpg" alt="alternative">
-                            </a>
-                        </div> <!-- end of image-container -->
-                        <p><strong>For:</strong> Syncnow, <strong>Project:</strong> web design for their corporate websites and landing pages <a class="blue" href="project.html">details</a></p>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-                <div class="col-lg-4">
-                    <div class="text-container">
-                        <div class="image-container">
-                            <a href="project.html">
-                                <img class="img-fluid" src="/assets/images/work-6.jpg" alt="alternative">
-                            </a>
-                        </div> <!-- end of image-container -->
-                        <p><strong>For:</strong> Shifter, <strong>Project:</strong> started a new website from ground up for a new product <a class="blue" href="project.html">details</a></p>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of basic-4 -->
-    <!-- end of works -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Liên hệ với tôi</h2>
-        </div>
-
-        <div class="row" data-aos="fade-in">
-
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Địa Chỉ:</h4>
-                <p>TP Sóc Trăng - Việt Nam</p>
-              </div>
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>duongthaitan13@gmail.com</p>
-              </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Điện thoại:</h4>
-                <p>+84 336608983</p>
-              </div>
-
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1856.5475042929788!2d105.68800312458526!3d9.604991319616754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0ff02b08904b3%3A0x5e73e5c6ba9412a7!2zTeG7uSBQaMaw4bubYywgTeG7uSBUw7osIFPDs2MgVHLEg25nLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1727497793459!5m2!1svi!2s"
-                frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
-
-            </div>
           </div>
-
-
-<div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-  <form id="contactForm" class="php-email-form">
-    <div class="row">
-      <div class="form-group col-md-6">
-        <label for="name">Họ và tên</label>
-        <input type="text" name="name" class="form-control" id="name" required>
-      </div>
-      <div class="form-group col-md-6">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" name="email" id="email" required>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="subject">Tiêu đề</label>
-      <input type="text" class="form-control" name="subject" id="subject" required>
-    </div>
-    <div class="form-group">
-      <label for="message">Nội dung</label>
-      <textarea class="form-control" name="message" rows="10" required></textarea>
-    </div>
-    <div class="my-3">
-      <div class="loading">Đang tải...</div>
-      <div class="error-message"></div>
-      <div class="sent-message">Cám ơn bạn đã gửi tin nhắn đến tôi!</div>
-    </div>
-    <div class="text-center">
-      <button type="submit" value="Submit" id="submitButton">Gửi ngay</button>
-
-      
-    </div>
-  </form>
-</div>
-
-
-
-
-
-
         </div>
 
+        <nav id="navbar" class="nav-menu navbar">
+          <ul>
+            <li>
+              <a href="#hero" class="nav-link scrollto active"
+                ><i class="bx bx-home"></i> <span>Trang chủ</span></a
+              >
+            </li>
+            <li>
+              <a href="#about" class="nav-link scrollto"
+                ><i class="bx bx-user"></i> <span>Thông tin</span></a
+              >
+            </li>
+            <li>
+              <a href="#resume" class="nav-link scrollto"
+                ><i class="bx bx-file-blank"></i> <span>Kinh nghiệm</span></a
+              >
+            </li>
+            <li>
+              <a href="#portfolio" class="nav-link scrollto"
+                ><i class="bx bx-book-content"></i> <span>Dự án</span></a
+              >
+            </li>
+            <!-- <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li> -->
+            <li>
+              <a href="#contact" class="nav-link scrollto"
+                ><i class="bx bx-envelope"></i> <span>Liên hệ</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Hero Section ======= -->
+    <section
+      id="hero"
+      class="d-flex flex-column justify-content-center align-items-center">
+      <div class="hero-container" data-aos="fade-in">
+        <h1>Duong Thai Tan</h1>
+
+        <p>
+          I'm
+          <span
+            class="typed"
+            data-typed-items="Designer, Developer, Freelancer, Photographer"></span>
+        </p>
+
+        <div class="overlay" id="overlay">
+          <div class="loader"></div>
+        </div>
+
+        <div class="btn-con">
+          <!-- Nút tải xuống CV -->
+          <a
+            href="assets/cv/Information.pdf"
+            class="main-btn"
+            download="duongthaitan-cv.pdf">
+            <span class="btn-text">Tải xuống CV</span>
+            <span class="btn-icon"><i class="fas fa-download"></i></span>
+          </a>
+        </div>
       </div>
     </section>
-    <!-- End Contact Section -->
+    <!-- End Hero -->
 
-  
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+      <!-- Floating Stars Background -->
+      <div class="stars-background"></div>
 
-</main>
+      <!-- Galaxy Animation -->
+      <div class="galaxy-container">
+        <!-- Central Star -->
+        <div class="central-star"></div>
 
-
-
-  <!-- End #main -->
-
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-
-      <div class="copyright">
-
-      </div>
-      <div class="credits">
-        &copy; Designed by <a href="https://www.facebook.com/TanHipp">
-          <strong>Duong Thai Tan</strong>
-        </a>
-      </div>
-    </div>
-    <div id="myCaptcha"></div>
-
-  </footer><!-- End  Footer -->
-
- <!-- Planet Back-to-Top Button -->
-    <div class="back-to-top" id="backToTop">
-        <div class="orbit-trail"></div>
-        <div class="orbit-container">
-            <div class="planet">
-                <div class="planet-arrow">↑</div>
-            </div>
+        <!-- Orbit Paths with Planets -->
+        <div class="orbit orbit-1">
+          <div class="planet planet-1"></div>
         </div>
+
+        <div class="orbit orbit-2">
+          <div class="planet planet-2"></div>
+        </div>
+
+        <div class="orbit orbit-3">
+          <div class="planet planet-3"></div>
+        </div>
+
+        <div class="orbit orbit-4">
+          <div class="planet planet-4"></div>
+        </div>
+
+        <div class="orbit orbit-5">
+          <div class="planet planet-5"></div>
+        </div>
+      </div>
+
+      <!-- Loading Text -->
+      <div class="loading-text">LOADING UNIVERSE</div>
+
+      <!-- Progress Bar -->
+      <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+
+      <!-- Loading Percentage -->
+      <div class="loading-percentage" id="loadingPercentage">0%</div>
     </div>
 
+    <main id="main">
+      <section id="about" class="about">
+        <div class="container">
+          <div class="section-title">
+            <h2 class="section-title">Giới thiệu về bản thân</h2>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 profile-image-container" data-aos="fade-right">
+              <!-- Đơn giản - chỉ cần click vào div này -->
+              <div
+                class="profile-image-wrapper"
+                tabindex="0"
+                onclick="this.classList.toggle('flipped')">
+                <!-- Mặt trước -->
+                <div class="profile-image-front">
+                  <img
+                    src="assets/img/avatar-profile-img.jpg"
+                    alt="Ảnh chính - Dương Thái Tân" />
+                </div>
+
+                <!-- Mặt sau -->
+                <div class="profile-image-back">
+                  <img
+                    src="assets/img/avatar-profile-img-back.jpg"
+                    alt="Ảnh phụ - Dương Thái Tân" />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+              <h3>Developer | Designer | Photographer</h3>
+              <p class="intro-text">Thông tin cơ bản về tôi</p>
+              <div class="row">
+                <div class="col-lg-6">
+                  <ul class="personal-info">
+                    <li>
+                      <i class="bi bi-calendar-event"></i>
+                      <strong>Ngày sinh:</strong>
+                      <span>18 Tháng 8</span>
+                    </li>
+                    <li>
+                      <i class="bi bi-globe"></i>
+                      <strong>Website:</strong>
+                      <span
+                        ><a href="https://www.tanhipp.id.vn/"
+                          >www.tanhipp.id.vn</a
+                        ></span
+                      >
+                    </li>
+                    <li>
+                      <i class="bi bi-telephone"></i>
+                      <strong>Điện thoại:</strong>
+                      <span>+84 3366 xx xx</span>
+                    </li>
+                    <li>
+                      <i class="bi bi-geo-alt"></i>
+                      <strong>Thành phố:</strong>
+                      <span>Sóc Trăng, Việt Nam</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-lg-6">
+                  <ul class="personal-info">
+                    <li>
+                      <i class="bi bi-person"></i>
+                      <strong>Tuổi:</strong>
+                      <span>21</span>
+                    </li>
+                    <li>
+                      <i class="bi bi-award"></i>
+                      <strong>Trình độ:</strong>
+                      <span>Sinh viên</span>
+                    </li>
+                    <li>
+                      <i class="bi bi-envelope"></i>
+                      <strong>Email:</strong>
+                      <span>duongthaitan13@gmail.com</span>
+                    </li>
+                    <li>
+                      <i class="bi bi-briefcase"></i>
+                      <strong>Freelance:</strong>
+                      <span>Sẵn sàng</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="services-section">
+        <div class="container">
+          <div class="services-header">
+            <h2 class="section-title">Services</h2>
+            <p class="section-subtitle">
+              Crafting digital experiences with cutting-edge technology and
+              innovative design. Specialized in modern web development solutions
+              that drive results and exceed expectations.
+            </p>
+          </div>
+
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="code-background">
+                function createDesign() { const innovation = true; const
+                creativity = 100; return { innovation, creativity }; } class
+                UIDesigner { constructor() { this.skills = ['Figma', 'Adobe
+                XD']; this.passion = 'User Experience'; } }
+              </div>
+              <div class="service-icon">
+                <i class="fas fa-palette"></i>
+              </div>
+              <h4 class="service-title">UI/UX DESIGN</h4>
+              <p class="service-description">
+                Creating intuitive and visually stunning interfaces that
+                captivate users. From wireframes to pixel-perfect designs, every
+                element is crafted with purpose and precision.
+              </p>
+            </div>
+
+            <div class="service-card">
+              <div class="code-background">
+                const developer = { languages: ['JavaScript', 'React',
+                'Node.js'], expertise: 'Full-Stack Development', mission:
+                'Clean, Scalable Code' }; async function buildApplication() {
+                return await innovation.create(); }
+              </div>
+              <div class="service-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <h4 class="service-title">DEVELOPMENT</h4>
+              <p class="service-description">
+                Building robust, scalable applications with modern technologies.
+                Focus on clean architecture, performance optimization, and
+                maintainable code structures.
+              </p>
+            </div>
+
+            <div class="service-card">
+              <div class="code-background">
+                const seoStrategy = { keywords: 'optimized', performance:
+                'lightning-fast', ranking: 'top-results' }; function
+                optimizeForSearch() { return seoStrategy.execute(); }
+              </div>
+              <div class="service-icon">
+                <i class="fas fa-rocket"></i>
+              </div>
+              <h4 class="service-title">SEO OPTIMIZATION</h4>
+              <p class="service-description">
+                Implementing advanced SEO strategies to boost your online
+                visibility. Technical optimization, content strategy, and
+                performance enhancement for better rankings.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating particles -->
+        <div class="particle" style="left: 10%; animation-delay: 0s"></div>
+        <div class="particle" style="left: 20%; animation-delay: 1s"></div>
+        <div class="particle" style="left: 30%; animation-delay: 2s"></div>
+        <div class="particle" style="left: 40%; animation-delay: 3s"></div>
+        <div class="particle" style="left: 50%; animation-delay: 4s"></div>
+        <div class="particle" style="left: 60%; animation-delay: 5s"></div>
+        <div class="particle" style="left: 70%; animation-delay: 0.5s"></div>
+        <div class="particle" style="left: 80%; animation-delay: 1.5s"></div>
+        <div class="particle" style="left: 90%; animation-delay: 2.5s"></div>
+      </section>
+      <!-- End Services Section -->
+      <!-- end of services -->
+
+      <!-- Projects -->
+      <div id="projects" class="basic-3">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <h2 class="h2-heading">Delivered projects</h2>
+              <p class="p-heading">
+                Listed below are some of the most representative projects I've
+                worked on. They range from basic web design for presentation
+                sites to advanced web development for online shops
+              </p>
+            </div>
+            <!-- end of col -->
+          </div>
+          <!-- end of row -->
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="text-container">
+                <div class="image-container">
+                  <a href="project.html">
+                    <img
+                      class="img-fluid"
+                      src="/assets/images/project-1.jpg"
+                      alt="alternative" />
+                  </a>
+                </div>
+                <!-- end of image-container -->
+                <p>
+                  <strong>For:</strong> Jumbotron, <strong>Project:</strong> web
+                  design for their corporate websites and landing pages for
+                  marketing campaigns
+                  <a class="blue" href="project.html">details</a>
+                </p>
+              </div>
+              <!-- end of text-container -->
+              <div class="text-container">
+                <div class="image-container">
+                  <a href="project.html">
+                    <img
+                      class="img-fluid"
+                      src="/assets/images/project-2.jpg"
+                      alt="alternative" />
+                  </a>
+                </div>
+                <!-- end of image-container -->
+                <p>
+                  <strong>For:</strong> Carsrepo,
+                  <strong>Project:</strong> designed and developed modern
+                  platform for purchasing second hand cars online
+                  <a class="blue" href="project.html">details</a>
+                </p>
+              </div>
+              <!-- end of text-container -->
+              <div class="text-container">
+                <div class="image-container">
+                  <a href="project.html">
+                    <img
+                      class="img-fluid"
+                      src="/assets/images/project-3.jpg"
+                      alt="alternative" />
+                  </a>
+                </div>
+                <!-- end of image-container -->
+                <p>
+                  <strong>For:</strong> Truevideo,
+                  <strong>Project:</strong> created a custom video editing and
+                  upload web app for this awesome team
+                  <a class="blue" href="project.html">details</a>
+                </p>
+              </div>
+              <!-- end of text-container -->
+              <div class="text-container">
+                <div class="image-container">
+                  <a href="project.html">
+                    <img
+                      class="img-fluid"
+                      src="/assets/images/project-4.jpg"
+                      alt="alternative" />
+                  </a>
+                </div>
+                <!-- end of image-container -->
+                <p>
+                  <strong>For:</strong> Evolosim,
+                  <strong>Project:</strong> complete redesign of their corporate
+                  website and platform update for their online shop
+                  <a class="blue" href="project.html">details</a>
+                </p>
+              </div>
+              <!-- end of text-container -->
+            </div>
+            <!-- end of col -->
+          </div>
+          <!-- end of row -->
+        </div>
+        <!-- end of container -->
+      </div>
+      <!-- end of basic-3 -->
+      <!-- end of projects -->
+
+      <!-- Works -->
+      <div class="basic-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="text-container">
+                <div class="image-container">
+                  <a href="project.html">
+                    <img
+                      class="img-fluid"
+                      src="/assets/images/work-1.jpg"
+                      alt="alternative" />
+                  </a>
+                </div>
+                <!-- end of image-container -->
+                <p>
+                  <strong>For:</strong> Zigoland,
+                  <strong>Project:</strong> started a new website from ground up
+                  for a new product
+                  <a class="blue" href="project.html">details</a>
+                </p>
+              </div>
+              <!-- end of text-container -->
+            </div>
+            <!-- end of col -->
+            <div class="col-lg-4">
+              <div class="text-container">
+                <div class="image-container">
+                  <a href="project.html">
+                    <img
+                      class="img-fluid"
+                      src="/assets/images/work-2.jpg"
+                      alt="alternative" />
+                  </a>
+                </div>
+                <!-- end of image-container -->
+                <p>
+                  <strong>For:</strong> Visodream,
+                  <strong>Project:</strong> developed a new forum for the
+                  Visodream community
+                  <a class="blue" href="project.html">details</a>
+                </p>
+              </div>
+              <!-- end of text-container -->
+            </div>
+            <!-- end of col -->
+            <div class="col-lg-4">
+              <div class="text-container">
+                <div class="image-container">
+                  <a href="project.html">
+                    <img
+                      class="img-fluid"
+                      src="/assets/images/work-3.jpg"
+                      alt="alternative" />
+                  </a>
+                </div>
+                <!-- end of image-container -->
+                <p>
+                  <strong>For:</strong> Primoday,
+                  <strong>Project:</strong> complete redesign of their corporate
+                  website and platform
+                  <a class="blue" href="project.html">details</a>
+                </p>
+              </div>
+              <!-- end of text-container -->
+            </div>
+            <!-- end of col -->
+          </div>
+          <!-- end of row -->
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="text-container">
+                <div class="image-container">
+                  <a href="project.html">
+                    <img
+                      class="img-fluid"
+                      src="/assets/images/work-4.jpg"
+                      alt="alternative" />
+                  </a>
+                </div>
+                <!-- end of image-container -->
+                <p>
+                  <strong>For:</strong> Nextlite,
+                  <strong>Project:</strong> created a custom video editing and
+                  upload web app <a class="blue" href="project.html">details</a>
+                </p>
+              </div>
+              <!-- end of text-container -->
+            </div>
+            <!-- end of col -->
+            <div class="col-lg-4">
+              <div class="text-container">
+                <div class="image-container">
+                  <a href="project.html">
+                    <img
+                      class="img-fluid"
+                      src="/assets/images/work-5.jpg"
+                      alt="alternative" />
+                  </a>
+                </div>
+                <!-- end of image-container -->
+                <p>
+                  <strong>For:</strong> Syncnow, <strong>Project:</strong> web
+                  design for their corporate websites and landing pages
+                  <a class="blue" href="project.html">details</a>
+                </p>
+              </div>
+              <!-- end of text-container -->
+            </div>
+            <!-- end of col -->
+            <div class="col-lg-4">
+              <div class="text-container">
+                <div class="image-container">
+                  <a href="project.html">
+                    <img
+                      class="img-fluid"
+                      src="/assets/images/work-6.jpg"
+                      alt="alternative" />
+                  </a>
+                </div>
+                <!-- end of image-container -->
+                <p>
+                  <strong>For:</strong> Shifter,
+                  <strong>Project:</strong> started a new website from ground up
+                  for a new product
+                  <a class="blue" href="project.html">details</a>
+                </p>
+              </div>
+              <!-- end of text-container -->
+            </div>
+            <!-- end of col -->
+          </div>
+          <!-- end of row -->
+        </div>
+        <!-- end of container -->
+      </div>
+      <!-- end of basic-4 -->
+      <!-- end of works -->
+
+      <!-- ======= Contact Section ======= -->
+      <section id="contact" class="contact">
+        <div class="container">
+          <div class="section-title">
+            <h2>Liên hệ với tôi</h2>
+          </div>
+
+          <div class="row" data-aos="fade-in">
+            <div class="col-lg-5 d-flex align-items-stretch">
+              <div class="info">
+                <div class="address">
+                  <i class="bi bi-geo-alt"></i>
+                  <h4>Địa Chỉ:</h4>
+                  <p>TP Sóc Trăng - Việt Nam</p>
+                </div>
+
+                <div class="email">
+                  <i class="bi bi-envelope"></i>
+                  <h4>Email:</h4>
+                  <p>duongthaitan13@gmail.com</p>
+                </div>
+
+                <div class="phone">
+                  <i class="bi bi-phone"></i>
+                  <h4>Điện thoại:</h4>
+                  <p>+84 336608983</p>
+                </div>
+
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1856.5475042929788!2d105.68800312458526!3d9.604991319616754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0ff02b08904b3%3A0x5e73e5c6ba9412a7!2zTeG7uSBQaMaw4bubYywgTeG7uSBUw7osIFPDs2MgVHLEg25nLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1727497793459!5m2!1svi!2s"
+                  frameborder="0"
+                  style="border: 0; width: 100%; height: 290px"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+
+            <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+              <form id="contactForm" class="php-email-form">
+                <div class="row">
+                  <div class="form-group col-md-6">
+                    <label for="name">Họ và tên</label>
+                    <input
+                      type="text"
+                      name="name"
+                      class="form-control"
+                      id="name"
+                      required />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="email">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      id="email"
+                      required />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="subject">Tiêu đề</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="subject"
+                    id="subject"
+                    required />
+                </div>
+                <div class="form-group">
+                  <label for="message">Nội dung</label>
+                  <textarea
+                    class="form-control"
+                    name="message"
+                    rows="10"
+                    required></textarea>
+                </div>
+                <div class="my-3">
+                  <div class="loading">Đang tải...</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">
+                    Cám ơn bạn đã gửi tin nhắn đến tôi!
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button type="submit" value="Submit" id="submitButton">
+                    Gửi ngay
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Contact Section -->
+    </main>
+
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="container">
+        <div class="copyright"></div>
+        <div class="credits">
+          &copy; Designed by
+          <a href="https://www.facebook.com/TanHipp">
+            <strong>Duong Thai Tan</strong>
+          </a>
+        </div>
+      </div>
+      <div id="myCaptcha"></div>
+    </footer>
+    <!-- End  Footer -->
+
+    <!-- Planet Back-to-Top Button -->
+    <div class="back-to-top" id="backToTop">
+      <div class="orbit-trail"></div>
+      <div class="orbit-container">
+        <div class="planet">
+          <div class="planet-arrow">↑</div>
+        </div>
+      </div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-      <script src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/typed.js/typed.umd.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/back-to-top.js"></script>
-  <script src="assets/js/loadingPage.js"></script>
-  <script src="assets/js/success.js"></script>
-  <script src="assets/js/skills.js"></script>
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/back-to-top.js"></script>
+    <script src="assets/js/loadingPage.js"></script>
+    <script src="assets/js/success.js"></script>
+    <script src="assets/js/skills.js"></script>
 
-  <script src="assets/js/cursor.js"></script>
-</body>
-
+    <script src="assets/js/cursor.js"></script>
+  </body>
 </html>
