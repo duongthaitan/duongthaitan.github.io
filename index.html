@@ -39,14 +39,18 @@
     <link href="assets/css/loadingPage.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@600;700&family=Mulish:wght@600;700&family=Inter:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@600;700&family=Mulish:wght@600;700&family=Inter:wght@600;800&display=swap"
+      rel="stylesheet" />
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-   
-<link
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
       integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
@@ -55,14 +59,11 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
       rel="stylesheet" />
-
-
   </head>
 
   <body>
-
- <!-- Scroll Indicator -->
- <!-- Scroll Indicator -->
+    <!-- Scroll Indicator -->
+    <!-- Scroll Indicator -->
     <div class="scroll-indicator" id="scrollIndicator"></div>
 
     <!-- Enhanced Custom Cursor -->
@@ -71,8 +72,6 @@
 
     <!-- Floating Action Button -->
     <button class="fab" id="fab">↑</button>
-
-
 
     <!-- ======= Mobile nav toggle button ======= -->
     <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
@@ -156,129 +155,191 @@
           <div class="loader"></div>
         </div>
 
+        <!-- Nút tải xuống -->
+        <div class="btn-con">
+          <a
+            href="assets/cv/Information.pdf"
+            class="main-btn"
+            id="cvButton"
+            download="duongthaitan-cv.pdf">
+            <span class="btn-text">Tải xuống CV</span>
+            <span class="btn-icon">
+              <i class="fas fa-download"></i>
+            </span>
+          </a>
+        </div>
 
-<!-- Nút tải xuống -->
-<div class="btn-con">
-  <a href="assets/cv/Information.pdf" class="main-btn" id="cvButton" download="duongthaitan-cv.pdf">
-    <span class="btn-text">Tải xuống CV</span>
-    <span class="btn-icon">
-      <i class="fas fa-download"></i>
-    </span>
-  </a>
-</div>
+        <!-- Âm thanh -->
+        <audio
+          id="Sound_download_cv"
+          src="assets/sound_effect/click-mouse.mp3"
+          preload="auto"></audio>
+        <audio
+          id="Sound_firework"
+          src="assets/sound_effect/firework.mp3"
+          preload="auto"></audio>
 
-<!-- Âm thanh -->
-<audio id="Sound_download_cv" src="assets/sound_effect/click-mouse.mp3" preload="auto"></audio>
-<audio id="Sound_firework" src="assets/sound_effect/firework.mp3" preload="auto"></audio>
+        <!-- Confetti library -->
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
-<!-- Confetti library -->
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+        <script>
+          const allColors = [
+            "#ff0000",
+            "#ff7f00",
+            "#ffff00",
+            "#00ff00",
+            "#00ffff",
+            "#0000ff",
+            "#8b00ff",
+            "#ffb3ba",
+            "#ffdfba",
+            "#ffffba",
+            "#baffc9",
+            "#bae1ff",
+            "#ffc0cb",
+            "#ffd1dc",
+            "#ffe4e1",
+            "#e6e6fa",
+            "#d8bfd8",
+            "#39ff14",
+            "#ff1493",
+            "#00ffff",
+            "#ff00ff",
+            "#ccff00",
+            "#00ffcc",
+            "#ff66ff",
+            "#66ff66",
+            "#ff5050",
+            "#99ccff",
+            "#c0c0c0",
+            "#ffd700",
+            "#b87333",
+            "#e5e4e2",
+            "#d4af37",
+            "#ffffff",
+            "#f5f5f5",
+            "#eeeeee",
+            "#cccccc",
+            "#dddddd",
+            "#999999",
+            "#ff4d4d",
+            "#ff944d",
+            "#ffff4d",
+            "#94ff4d",
+            "#4dff88",
+            "#4dd2ff",
+            "#4d94ff",
+            "#b84dff",
+            "#ff4df2",
+            "#ff6f91",
+            "#ff9671",
+            "#ffc75f",
+            "#f9f871",
+            "#c1fba4",
+            "#a0e7e5",
+            "#b4f8c8",
+            "#fbe7c6",
+            "#fcd5ce",
+            "#a9def9",
+            "#e4c1f9",
+            "#f08080",
+            "#fa8072",
+            "#f0e68c",
+            "#dda0dd",
+            "#f5a9b8",
+          ];
 
-<script>
-  const allColors = [
-    '#ff0000', '#ff7f00', '#ffff00', '#00ff00', '#00ffff', '#0000ff', '#8b00ff',
-    '#ffb3ba', '#ffdfba', '#ffffba', '#baffc9', '#bae1ff',
-    '#ffc0cb', '#ffd1dc', '#ffe4e1', '#e6e6fa', '#d8bfd8',
-    '#39ff14', '#ff1493', '#00ffff', '#ff00ff', '#ccff00',
-    '#00ffcc', '#ff66ff', '#66ff66', '#ff5050', '#99ccff',
-    '#c0c0c0', '#ffd700', '#b87333', '#e5e4e2', '#d4af37',
-    '#ffffff', '#f5f5f5', '#eeeeee', '#cccccc', '#dddddd', '#999999',
-    '#ff4d4d', '#ff944d', '#ffff4d', '#94ff4d', '#4dff88',
-    '#4dd2ff', '#4d94ff', '#b84dff', '#ff4df2', '#ff6f91',
-    '#ff9671', '#ffc75f', '#f9f871', '#c1fba4', '#a0e7e5',
-    '#b4f8c8', '#fbe7c6', '#fcd5ce', '#a9def9', '#e4c1f9',
-    '#f08080', '#fa8072', '#f0e68c', '#dda0dd', '#f5a9b8'
-  ];
+          // 🎆 HÀM TẠO PHÁO HOA + ÂM THANH
+          function launchSound_download_cv(x, y) {
+            const fireworkSound = document.getElementById("Sound_firework");
+            if (fireworkSound) {
+              fireworkSound.currentTime = 0;
+              fireworkSound.play().catch((err) => {
+                console.warn(
+                  "Trình duyệt có thể chặn âm thanh pháo hoa nếu chưa có tương tác",
+                  err
+                );
+              });
+            }
 
-  // 🎆 HÀM TẠO PHÁO HOA + ÂM THANH
-  function launchSound_download_cv(x, y) {
-    const fireworkSound = document.getElementById('Sound_firework');
-    if (fireworkSound) {
-      fireworkSound.currentTime = 0;
-      fireworkSound.play().catch(err => {
-        console.warn("Trình duyệt có thể chặn âm thanh pháo hoa nếu chưa có tương tác", err);
-      });
-    }
+            const duration = 2000;
+            const animationEnd = Date.now() + duration;
 
-    const duration = 2000;
-    const animationEnd = Date.now() + duration;
+            const defaults = {
+              origin: { x: x / window.innerWidth, y: y / window.innerHeight },
+              ticks: 250,
+              gravity: 1,
+              colors: allColors,
+            };
 
-    const defaults = {
-      origin: { x: x / window.innerWidth, y: y / window.innerHeight },
-      ticks: 250,
-      gravity: 1,
-      colors: allColors
-    };
+            const interval = setInterval(() => {
+              const timeLeft = animationEnd - Date.now();
+              if (timeLeft <= 0) return clearInterval(interval);
 
-    const interval = setInterval(() => {
-      const timeLeft = animationEnd - Date.now();
-      if (timeLeft <= 0) return clearInterval(interval);
+              confetti(
+                Object.assign({}, defaults, {
+                  particleCount: 50 + Math.floor(Math.random() * 30),
+                  spread: 80 + Math.random() * 40,
+                  startVelocity: 30 + Math.random() * 20,
+                  angle: 60 + Math.random() * 60,
+                  scalar: 0.9 + Math.random() * 0.5,
+                })
+              );
+            }, 200);
+          }
 
-      confetti(Object.assign({}, defaults, {
-        particleCount: 50 + Math.floor(Math.random() * 30),
-        spread: 80 + Math.random() * 40,
-        startVelocity: 30 + Math.random() * 20,
-        angle: 60 + Math.random() * 60,
-        scalar: 0.9 + Math.random() * 0.5
-      }));
-    }, 200);
-  }
+          // ⏬ MAIN: Xử lý nút bấm
+          document.addEventListener("DOMContentLoaded", function () {
+            const cvButton = document.getElementById("cvButton");
 
-  // ⏬ MAIN: Xử lý nút bấm
-  document.addEventListener('DOMContentLoaded', function () {
-    const cvButton = document.getElementById('cvButton');
+            if (cvButton) {
+              cvButton.addEventListener("click", function (e) {
+                e.preventDefault(); // 👈 Ngăn reload / chuyển trang
+                // 🔊 Âm thanh click
+                const clickSound = document.getElementById("Sound_download_cv");
+                if (clickSound) {
+                  clickSound.currentTime = 0;
+                  clickSound.play();
+                }
 
-    if (cvButton) {
-      cvButton.addEventListener('click', function (e) {
-         e.preventDefault(); // 👈 Ngăn reload / chuyển trang
-        // 🔊 Âm thanh click
-        const clickSound = document.getElementById('Sound_download_cv');
-        if (clickSound) {
-          clickSound.currentTime = 0;
-          clickSound.play();
-        }
+                // Ripple effect
+                const ripple = document.createElement("span");
+                ripple.classList.add("ripple");
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                ripple.style.width = ripple.style.height = size + "px";
+                ripple.style.left = e.clientX - rect.left - size / 2 + "px";
+                ripple.style.top = e.clientY - rect.top - size / 2 + "px";
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
 
-        // Ripple effect
-        const ripple = document.createElement('span');
-        ripple.classList.add('ripple');
-        const rect = this.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height);
-        ripple.style.width = ripple.style.height = size + 'px';
-        ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
-        ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
-        this.appendChild(ripple);
-        setTimeout(() => ripple.remove(), 600);
+                // State
+                this.classList.add("downloading");
 
-        // State
-        this.classList.add('downloading');
+                setTimeout(() => {
+                  this.classList.remove("downloading");
+                  this.classList.add("success");
 
-        setTimeout(() => {
-          this.classList.remove('downloading');
-          this.classList.add('success');
+                  const originalText =
+                    this.querySelector(".btn-text").textContent;
+                  this.querySelector(".btn-text").textContent = "Đã tải xuống!";
+                  this.querySelector(".btn-icon i").className = "fas fa-check";
 
-          const originalText = this.querySelector('.btn-text').textContent;
-          this.querySelector('.btn-text').textContent = 'Đã tải xuống!';
-          this.querySelector('.btn-icon i').className = 'fas fa-check';
+                  // ✅ Pháo hoa + âm thanh
+                  launchSound_download_cv(e.clientX, e.clientY);
 
-          // ✅ Pháo hoa + âm thanh
-          launchSound_download_cv(e.clientX, e.clientY);
-
-          // Reset
-          setTimeout(() => {
-            this.classList.remove('success');
-            this.querySelector('.btn-text').textContent = originalText;
-            this.querySelector('.btn-icon i').className = 'fas fa-download';
-          }, 2000);
-        }, 1500);
-      });
-    }
-  });
-</script>
-
-
-
-
-
+                  // Reset
+                  setTimeout(() => {
+                    this.classList.remove("success");
+                    this.querySelector(".btn-text").textContent = originalText;
+                    this.querySelector(".btn-icon i").className =
+                      "fas fa-download";
+                  }, 2000);
+                }, 1500);
+              });
+            }
+          });
+        </script>
       </div>
     </section>
     <!-- End Hero -->
@@ -522,7 +583,7 @@
                   <a href="photo-gallery.html">
                     <img
                       class="img-fluid"
-                      src="/assets/images/project-1.jpg" 
+                      src="/assets/images/project-1.jpg"
                       alt="alternative" />
                   </a>
                 </div>
@@ -850,27 +911,24 @@
     </footer>
     <!-- End  Footer -->
 
-
-
-
     <script
       src="https://challenges.cloudflare.com/turnstile/v0/api.js"
       async
       defer></script>
 
-        <script
+    <script
       src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback"
       defer></script>
 
-<!-- CDN thư viện -->
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- CDN thư viện -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script
       type="text/javascript"
       src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
     <!-- Vendor JS Files -->
@@ -892,6 +950,5 @@
     <script src="assets/js/grab-animation.js"></script>
     <script src="assets/js/success.js"></script>
     <script src="assets/js/skills.js"></script>
-
   </body>
 </html>

@@ -1,77 +1,616 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="vi">
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/css/success.css" rel="stylesheet">
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    <link href='https://fonts.googleapis.com/css?family=Lato:300,400|Montserrat:700' rel='stylesheet' type='text/css'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thành Công - Cảm Ơn Đã Liên Hệ</title>
+    
+    <!-- Modern Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
-        @import url(//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css);
-        @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+        :root {
+            --space-blue: #0ea5e9;
+            --space-purple: #8b5cf6;
+            --space-pink: #ec4899;
+            --dark-bg: #0f172a;
+            --darker-bg: #020617;
+            --glass: rgba(255, 255, 255, 0.1);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Be Vietnam Pro', 'Mulish', 'Inter', sans-serif;
+            background: var(--darker-bg);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Space Background */
+        .space-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, var(--dark-bg) 0%, var(--darker-bg) 100%);
+            z-index: -2;
+        }
+
+        /* Stars */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: twinkle 3s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* Main Container */
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+
+/* Success Icon */
+.success-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px; /* Reduced padding for smaller screens */
+}
+
+/* Icon Circle */
+.icon-circle {
+    width: 80px; /* Smaller size for mobile */
+    height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #001122 0%, #000011 100%);
+    box-shadow: 
+        0 0 20px rgba(100, 200, 255, 0.3), /* Reduced shadow for performance */
+        0 0 40px rgba(100, 200, 255, 0.15);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Floating animation */
+@keyframes iconFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); } /* Reduced translation for mobile */
+}
+
+@media (max-width: 768px) {
+  #earth-container {
+    display: none !important;
+  }
+}
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    
+    .success-icon {
+       
+        padding: 20px;
+    }
+
+    .icon-circle {
+        width: 120px;
+        height: 120px;
+        box-shadow: 
+            0 0 30px rgba(100, 200, 255, 0.4),
+            0 0 60px rgba(100, 200, 255, 0.2);
+    }
+
+    @keyframes iconFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+}
+
+
+        /* Title */
+        .title {
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--space-blue), var(--space-purple), var(--space-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes titleGlow {
+            from { filter: brightness(1); }
+            to { filter: brightness(1.2); }
+        }
+
+        /* Message */
+        .message {
+            font-style: italic;
+            max-width: 300px;
+            font-weight: 900;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 5s ease 0.8s both;
+        }
+
+        .highlight {
+            color: var(--space-blue);
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Button */
+        .space-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--space-blue);
+            border-radius: 50px;
+            color: var(--text-primary);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease 1.2s both;
+        }
+
+        .space-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .space-button:hover::before {
+            left: 100%;
+        }
+
+        .space-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
+            border-color: var(--space-purple);
+            background: rgba(14, 165, 233, 0.1);
+        }
+
+        .button-icon {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+            transition: transform 0.3s ease;
+        }
+
+        .space-button:hover .button-icon {
+            transform: translateX(-3px);
+        }
+
+        /* Floating Orbs */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: orbFloat 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .orb:nth-child(1) {
+            width: 60px;
+            height: 60px;
+            top: 20%;
+            left: 10%;
+            background: radial-gradient(circle, var(--space-blue), transparent);
+            animation-delay: 0s;
+        }
+
+        .orb:nth-child(2) {
+            width: 40px;
+            height: 40px;
+            top: 70%;
+            right: 15%;
+            background: radial-gradient(circle, var(--space-purple), transparent);
+            animation-delay: 3s;
+        }
+
+        .orb:nth-child(3) {
+            width: 30px;
+            height: 30px;
+            bottom: 30%;
+            left: 80%;
+            background: radial-gradient(circle, var(--space-pink), transparent);
+            animation-delay: 6s;
+        }
+
+        @keyframes orbFloat {
+            0%, 100% { 
+                transform: translateY(0px) translateX(0px); 
+                opacity: 0.6; 
+            }
+            33% { 
+                transform: translateY(-30px) translateX(20px); 
+                opacity: 0.8; 
+            }
+            66% { 
+                transform: translateY(20px) translateX(-20px); 
+                opacity: 0.4; 
+            }
+        }
+
+        /* Footer */
+        .footer {
+            position: fixed;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            opacity: 0.7;
+            animation: fadeInUp 1s ease 1.5s both;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .success-icon {
+                width: 100px;
+                height: 100px;
+            }
+            
+   
+            
+            .message {
+                font-size: 1rem;
+            }
+            
+            .space-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.8rem;
+            }
+            
+            .orb {
+                display: none;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--darker-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 3px solid rgba(14, 165, 233, 0.3);
+            border-top: 3px solid var(--space-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
-    <link rel="stylesheet" href="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/default_thank_you.css">
-    <script src="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/jquery-1.9.1.min.js"></script>
-    <script src="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/html5shiv.js"></script>
-    <title>Cám ơn đã liên hệ</title>
 </head>
-
 <body>
-    <div id="loading-bg">
-        <div id="page">
-            <div id="container">
-                <div id="ring"></div>
-                <div id="ring"></div>
-                <div id="ring"></div>
-                <div id="ring"></div>
-                <div id="h3">Loading...</div>
-            </div>
-        </div>
+    <!-- Space Background -->
+    <div class="space-background"></div>
+    
+    <!-- Stars -->
+    <div class="stars"></div>
+    
+    <!-- Floating Orbs -->
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+    
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="container">
+       
+
+<!-- Thay thế phần success-icon cũ bằng code này -->
+<div class="success-icon">
+    <div class="icon-circle" id="earth-container">
+        <!-- Three.js sẽ render vào đây -->
+    </div>
+</div>
+
+        
+        <h1 class="title">ĐÃ GỬI MAIL THÀNH CÔNG</h1>
+        
+        <p class="message">
+            <span class="highlight">Cảm ơn bạn đã liên hệ!</span><br>
+      
+            Chúng tôi sẽ phản hồi trong thời gian sớm nhất.
+        </p>
+        
+        <a href="/" class="space-button" onclick="navigateHome(event)">
+            <svg class="button-icon" viewBox="0 0 24 24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+            Về Trang Chủ
+        </a>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+     
     </div>
 
-    <header class="site-header" id="header">
-        <h1 class="site-header__title" data-lead-id="site-header-title">ĐÃ GỬI LIÊN HỆ</h1>
-    </header>
+<script>
+(() => {
+    // ==== CONST ====
+    const STAR_COUNT = 100;
+    const CLOUD_COUNT = 25;
+    const FOREST_COUNT = 20;
 
-    <div class="main-content">
-        <div class="main-container">
-            <div class="check-container">
-                <div class="check-background">
-                    <svg viewBox="0 0 65 51" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 25L27.3077 44L58.5 7" stroke="white" stroke-width="13" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
-                </div>
-                <div class="check-shadow"></div>
-            </div>
-        </div>
-        <p class="main-content__body" data-lead-id="main-content-body">Cám ơn bạn đã liên hệ với mình. Mình đã nhận được
-            và sẽ phản hồi với bạn sớm nhất</p>
+    // ==== TẠO SAO ====
+    function createStars() {
+        const starsContainer = document.querySelector('.stars');
+        const fragment = document.createDocumentFragment();
 
-        <div class="button-container">
-            <button class="Btn" onclick="goToHome()">
-                <div class="sign"><svg viewBox="0 0 512 512">
-                        <path
-                            d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
-                        </path>
-                    </svg></div>
-                <div class="text">Trang chủ</div>
-            </button>
-        </div>
-    </div>
+        for (let i = 0; i < STAR_COUNT; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.animationDelay = `${Math.random() * 3}s`;
+            star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            fragment.appendChild(star);
+        }
+
+        starsContainer.appendChild(fragment);
+    }
+
+    // ==== TRÁI ĐẤT 3D ====
+    function initEarthGlobe() {
+        const container = document.getElementById('earth-container');
+        if (!container) return;
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(120, 120);
+        renderer.setClearColor(0x000000, 0);
+        container.appendChild(renderer.domElement);
+        camera.position.z = 2.5;
+
+        // Ánh sáng
+        scene.add(new THREE.AmbientLight(0x404040, 0.4));
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+        directionalLight.position.set(3, 2, 5);
+        scene.add(directionalLight);
+
+        // Texture đất liền và đại dương
+        const canvas = document.createElement('canvas');
+        canvas.width = 512;
+        canvas.height = 256;
+        const ctx = canvas.getContext('2d');
+
+        const oceanGradient = ctx.createLinearGradient(0, 0, 0, 256);
+        oceanGradient.addColorStop(0, '#1e3c72');
+        oceanGradient.addColorStop(0.5, '#2a5298');
+        oceanGradient.addColorStop(1, '#1e3c72');
+        ctx.fillStyle = oceanGradient;
+        ctx.fillRect(0, 0, 512, 256);
+
+        ctx.fillStyle = '#2d5016';
+        [
+            [256, 150, 40, 60], // Africa
+            [350, 100, 50, 40], // Asia
+            [100, 90, 45, 50],  // North America
+            [125, 175, 25, 40]  // South America
+        ].forEach(([x, y, rx, ry]) => {
+            ctx.beginPath();
+            ctx.ellipse(x, y, rx, ry, 0, 0, Math.PI * 2);
+            ctx.fill();
+        });
+
+        ctx.fillStyle = '#4CAF50';
+        for (let i = 0; i < FOREST_COUNT; i++) {
+            ctx.beginPath();
+            ctx.arc(Math.random() * 512, Math.random() * 256, Math.random() * 10 + 3, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        const earth = new THREE.Mesh(
+            new THREE.SphereGeometry(1, 32, 32),
+            new THREE.MeshPhongMaterial({ map: new THREE.CanvasTexture(canvas), shininess: 0.1 })
+        );
+        scene.add(earth);
+
+        // Mây
+        const cloudsCanvas = document.createElement('canvas');
+        cloudsCanvas.width = 512;
+        cloudsCanvas.height = 256;
+        const cloudsCtx = cloudsCanvas.getContext('2d');
+        cloudsCtx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+        for (let i = 0; i < CLOUD_COUNT; i++) {
+            cloudsCtx.beginPath();
+            cloudsCtx.arc(Math.random() * 512, Math.random() * 256, Math.random() * 15 + 8, 0, Math.PI * 2);
+            cloudsCtx.fill();
+        }
+
+        const clouds = new THREE.Mesh(
+            new THREE.SphereGeometry(1.01, 32, 32),
+            new THREE.MeshPhongMaterial({
+                map: new THREE.CanvasTexture(cloudsCanvas),
+                transparent: true,
+                opacity: 0.5
+            })
+        );
+        scene.add(clouds);
+
+        // Khí quyển
+        const atmosphere = new THREE.Mesh(
+            new THREE.SphereGeometry(1.05, 32, 32),
+            new THREE.MeshBasicMaterial({
+                color: 0x64c8ff,
+                transparent: true,
+                opacity: 0.15,
+                side: THREE.BackSide
+            })
+        );
+        scene.add(atmosphere);
+
+        // Animation
+        function animate() {
+            requestAnimationFrame(animate);
+            earth.rotation.y += 0.005;
+            clouds.rotation.y += 0.007;
+            atmosphere.rotation.y += 0.003;
+            renderer.render(scene, camera);
+        }
+
+        animate();
+    }
+
+    // ==== GLOW CURSOR ====
+    function setupCursorGlow() {
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeOut {
+                0% { opacity: 0.6; transform: scale(1); }
+                100% { opacity: 0; transform: scale(2); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        document.addEventListener('mousemove', (e) => {
+            const glow = document.createElement('div');
+            glow.style.cssText = `
+                position: fixed;
+                left: ${e.clientX - 5}px;
+                top: ${e.clientY - 5}px;
+                width: 10px;
+                height: 10px;
+                background: radial-gradient(circle, rgba(14,165,233,0.6), transparent);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 999;
+                animation: fadeOut 1s ease-out forwards;
+            `;
+            document.body.appendChild(glow);
+            setTimeout(() => glow.remove(), 1000);
+        });
+    }
+
+    // ==== PARALLAX ORBS ====
+    function setupOrbParallax() {
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX / window.innerWidth - 0.5;
+            const mouseY = e.clientY / window.innerHeight - 0.5;
+
+            document.querySelectorAll('.orb').forEach((orb, i) => {
+                const speed = (i + 1) * 0.02;
+                orb.style.transform = `translate(${mouseX * 50 * speed}px, ${mouseY * 50 * speed}px)`;
+            });
+        });
+    }
+
+    // ==== FADE NAVIGATION ====
+    window.navigateHome = function (event) {
+        event.preventDefault();
+        document.body.style.transition = 'opacity 0.5s ease';
+        document.body.style.opacity = '0';
+        setTimeout(() => (window.location.href = '/'), 500);
+    }
+
+    // ==== INIT ALL ====
+    window.addEventListener('load', () => {
+        createStars();
+        initEarthGlobe();
+        setupCursorGlow();
+        setupOrbParallax();
+
+        // Hide loading
+        setTimeout(() => {
+            document.getElementById('loading')?.classList.add('hidden');
+        }, 1500);
+    });
+})();
+</script>
 
 
-    <footer class="site-footer" id="footer">
-        <p class="site-footer__fineprint" id="fineprint">Copyright © | Dương Thái Tân</p>
-    </footer>
-
-    <script src="assets/js/success.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </body>
-
-
 </html>
