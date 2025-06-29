@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tandev.foto | Album</title>
+
+    <!-- External Libraries -->
+         <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/photo-gallery/style.css">
+    
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator" id="scrollIndicator"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <!-- Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+            <h3 class="hero-title">CÙNG XEM CÁC BỨC ẢNH TÔI CHỤP</h3>
+            <p class="hero-subtitle">Các ảnh mà tôi đã chụp</p>
+            <a href="index.html" class="cta-button">
+                Quay về trang chủ
+                <i class="fas fa-arrow-left" style="margin-left: 10px;"></i>
+            </a>
+            
+        </div>
+    </section>
+
+    <!-- Main Wrapper -->
+    <div class="wrapper">
+        <!-- Slider Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Bộ Sưu Tập Nổi Bật</h2>
+                <div class="slider-section glass" data-aos="fade-up" data-aos-delay="200">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+                                <div class="slide-content">
+                                    <h3 class="slide-title">Thiên Nhiên Hùng Vĩ</h3>
+                                    <p class="slide-description">Khám phá vẻ đẹp kỳ vĩ của thiên nhiên qua những bức ảnh nghệ thuật</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+                                <div class="slide-content">
+                                    <h3 class="slide-title">Kiến Trúc Hiện Đại</h3>
+                                    <p class="slide-description">Những công trình kiến trúc độc đáo và ấn tượng</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1500964757637-c85e8a162699?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2003&q=80');">
+                                <div class="slide-content">
+                                    <h3 class="slide-title">Nghệ Thuật Đương Đại</h3>
+                                    <p class="slide-description">Các tác phẩm nghệ thuật hiện đại đầy sáng tạo</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');">
+                                <div class="slide-content">
+                                    <h3 class="slide-title">Rừng Xanh Bí Ẩn</h3>
+                                    <p class="slide-description">Hành trình khám phá những khu rừng nguyên sinh</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="section" id="gallery">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">DANH MỤC ẢNH</h2>
+                
+                <!-- Filter Tabs -->
+                <div class="filter-tabs" data-aos="fade-up" data-aos-delay="200">
+                    <div class="filter-tab active" data-filter="all">Tất Cả</div>
+                    <div class="filter-tab" data-filter="nature">Thiên Nhiên</div>
+                    <div class="filter-tab" data-filter="architecture">Chân dung</div>
+                    <div class="filter-tab" data-filter="art">Nghệ Thuật</div>
+                    <div class="filter-tab" data-filter="lifestyle">Phong Cách</div>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="gallery" id="galleryGrid">
+                    <div class="gallery-item" data-category="nature" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mountain Landscape" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus gallery-icon"></i>
+                        </div>
+                        <div class="gallery-info">
+                            <h3 class="gallery-title">Núi Non Hùng Vĩ</h3>
+                            <p class="gallery-description">Cảnh quan núi non tuyệt đẹp</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="architecture" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modern Architecture" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus gallery-icon"></i>
+                        </div>
+                        <div class="gallery-info">
+                            <h3 class="gallery-title">Kiến Trúc Hiện Đại</h3>
+                            <p class="gallery-description">Thiết kế kiến trúc độc đáo</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="nature" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Forest" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus gallery-icon"></i>
+                        </div>
+                        <div class="gallery-info">
+                            <h3 class="gallery-title">Rừng Xanh</h3>
+                            <p class="gallery-description">Thiên nhiên hoang dã</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="art" data-aos="fade-up" data-aos-delay="400">
+                        <img src="https://images.unsplash.com/photo-1500964757637-c85e8a162699?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Abstract Art" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus gallery-icon"></i>
+                        </div>
+                        <div class="gallery-info">
+                            <h3 class="gallery-title">Nghệ Thuật Trừu Tượng</h3>
+                            <p class="gallery-description">Sáng tạo đương đại</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="lifestyle" data-aos="fade-up" data-aos-delay="500">
+                        <img src="https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Lifestyle" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus gallery-icon"></i>
+                        </div>
+                        <div class="gallery-info">
+                            <h3 class="gallery-title">Phong Cách Sống</h3>
+                            <p class="gallery-description">Cuộc sống hiện đại</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="architecture" data-aos="fade-up" data-aos-delay="600">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="City Buildings" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus gallery-icon"></i>
+                        </div>
+                        <div class="gallery-info">
+                            <h3 class="gallery-title">Tòa Nhà Chọc Trời</h3>
+                            <p class="gallery-description">Đô thị hiện đại</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Floating Action Button -->
+    <div class="fab" id="fab">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- External Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="assets/photo-gallery/script.js"></script>
+</body>
+</html>

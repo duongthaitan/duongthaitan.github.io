@@ -1,0 +1,200 @@
+   :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+        }
+ 
+
+        /* Enhanced Custom Cursor */
+        .cursor {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            mix-blend-mode: difference;
+            transform: translate(-50%, -50%);
+            opacity: 1;
+        }
+
+        .cursor-follower {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: translate(-50%, -50%);
+            opacity: 0.7;
+        }
+
+        /* Cursor hover effects */
+        .cursor.hover {
+            width: 16px;
+            height: 16px;
+            background: var(--secondary-gradient);
+            transform: translate(-50%, -50%) scale(1.5);
+        }
+
+        .cursor-follower.hover {
+            width: 60px;
+            height: 60px;
+            border-color: rgba(245, 87, 108, 0.6);
+            background: rgba(245, 87, 108, 0.1);
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+
+        /* Cursor click effect */
+        .cursor.click {
+            width: 20px;
+            height: 20px;
+            background: var(--primary-gradient);
+            transform: translate(-50%, -50%) scale(0.8);
+        }
+
+        .cursor-follower.click {
+            width: 80px;
+            height: 80px;
+            border-color: rgba(102, 126, 234, 0.8);
+            background: rgba(102, 126, 234, 0.2);
+        }
+
+        /* Cursor trail effect */
+        .cursor-trail {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9997;
+            opacity: 0.6;
+            transform: translate(-50%, -50%);
+            animation: trailFade 0.5s ease-out forwards;
+        }
+
+        @keyframes trailFade {
+            0% {
+                opacity: 0.6;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.5);
+            }
+        }
+
+        /* Hide cursor on mobile devices */
+        @media (max-width: 767px), (hover: none) {
+            .cursor,
+            .cursor-follower,
+            .cursor-trail {
+                display: none !important;
+            }
+            
+            body {
+                cursor: default;
+            }
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent-gradient);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 9999;
+            transition: transform 0.1s ease;
+            box-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
+        }
+
+        /* Floating Action Button */
+        .fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--secondary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 1000;
+            box-shadow: 0 10px 25px rgba(245, 87, 108, 0.3);
+            opacity: 0;
+            transform: translateY(100px);
+            border: none;
+            cursor: none;
+        }
+
+        .fab:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 15px 35px rgba(245, 87, 108, 0.5);
+        }
+
+        .fab.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+       
+        
+        /* Particle effect */
+        .particle {
+            position: fixed;
+            width: 2px;
+            height: 2px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9996;
+            animation: particleFade 1s ease-out forwards;
+        }
+
+        @keyframes particleFade {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0) translateY(-20px);
+            }
+        }
+
+        /* Magnetic effect indicator */
+        .magnetic-zone {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .magnetic-zone::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(79, 172, 254, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .magnetic-zone:hover::before {
+            opacity: 1;
+        }

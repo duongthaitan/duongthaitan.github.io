@@ -11,6 +11,7 @@
 --------------------------------------------------------------*/
 
 :root {
+  
   --success-primary: #3dc480;
   --success-secondary: #b8babb;
   --color-primary: #191d2b;
@@ -29,8 +30,9 @@
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Be Vietnam Pro', 'Mulish', 'Inter', sans-serif;
   color: #272829;
+  min-height: 200vh; /* Để có thể scroll test */
   background: linear-gradient(
     135deg,
     #0c0c0c 0%,
@@ -44,6 +46,31 @@ body {
   overflow-x: hidden;
 }
 
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #149ddd;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #37b3ed;
+  text-decoration: none;
+}
+p
+{
+  font-size: 16px;
+  line-height: 1.6;
+  color: #a8a9b4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Be Vietnam Pro', 'Mulish', 'Inter', sans-serif;
+      color: #ffffff;
+}
 /*--------------------------------------------------------------
 # ======= Hero Section ======= -->
 --------------------------------------------------------------*/
@@ -51,11 +78,11 @@ body {
 .btn-con {
   display: flex;
   align-self: flex-start;
-  position: relative; /* Cần thiết để căn chỉnh vị trí của loader */
+  position: relative;
 }
 
 .main-btn {
-  border-radius: 30px;
+  border-radius: 50px;
   color: inherit;
   font-weight: 600;
   position: relative;
@@ -64,48 +91,221 @@ body {
   align-self: flex-start;
   align-items: center;
   overflow: hidden;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.051),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(0);
+  cursor: pointer;
 }
 
 .main-btn .btn-text {
   color: #ffffff;
-  padding: 0 2rem;
+  padding: 0.8rem 2rem;
+  font-style: italic;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .main-btn .btn-icon {
   color: #ffffff;
-  background-color: var(--color-secondary);
+  background: linear-gradient(135deg, #149ddd, #149ddd);
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   padding: 1rem;
+  position: relative;
+  z-index: 2;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 
+    0 4px 15px rgb(0, 208, 255),
+    inset 0 1px 0 rgb(0, 208, 255);
 }
 
+.main-btn .btn-icon i {
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+/* Background Animation */
 .main-btn::before {
   content: "";
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--color-secondary);
-  transform: translateX(100%);
-  transition: transform 0.5s ease-out;
-  z-index: -1;
+  background: linear-gradient(135deg, 
+    rgb(0, 208, 255) 0%, 
+   rgb(0, 208, 255) 50%,
+   rgb(0, 208, 255) 100%);
+  transform: translateX(-100%);
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 1;
+}
+
+/* Shine Effect */
+.main-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.4), 
+    transparent);
+  transition: left 0.6s ease;
+  z-index: 3;
+}
+
+/* Hover Effects */
+.main-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+
+  border-color: #149ddd;
 }
 
 .main-btn:hover::before {
   transform: translateX(0);
 }
 
-.main-btn::before {
-  transform: translateX(100%);
-  transition: transform 0.5s ease-out;
+.main-btn:hover::after {
+  left: 100%;
 }
 
-.loading {
-  display: block;
+.main-btn:hover .btn-icon {
+  background: linear-gradient(135deg, rgb(0, 208, 255), rgb(0, 208, 255));
+  transform: rotate(360deg) scale(1.1);
+  box-shadow: 
+    0 6px 20px rgb(0, 208, 255),
+    inset 0 1px 0 rgb(0, 208, 255);
 }
+
+.main-btn:hover .btn-icon i {
+  animation: bounce 0.6s ease;
+}
+
+.main-btn:hover .btn-text {
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  transform: translateX(5px);
+}
+
+/* Active State */
+.main-btn:active {
+  transform: translateY(-1px) scale(0.98);
+  box-shadow: 
+    0 5px 15px rgba(0, 0, 0, 0.3),
+    inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Click Animation */
+.main-btn.downloading {
+  animation: pulse 1.5s infinite;
+}
+
+.main-btn.downloading .btn-icon i {
+  animation: spin 1s linear infinite;
+}
+
+/* Success State */
+.main-btn.success {
+  background: linear-gradient(135deg, #08b5c5, #066d85);
+  border-color: #07c9cd;
+  animation: successPulse 0.6s ease;
+}
+
+/* Ripple Effect */
+.main-btn .ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(20, 177, 198, 0.89);
+  transform: scale(0);
+  animation: rippleEffect 0.6s linear;
+  pointer-events: none;
+}
+
+/* Keyframe Animations */
+@keyframes bounce {
+  0%, 20%, 60%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-8px); }
+  80% { transform: translateY(-4px); }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(20, 177, 198, 0.89); }
+  70% { box-shadow: 0 0 0 10px rgba(39, 174, 96, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(39, 174, 96, 0); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes successPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes rippleEffect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-btn {
+    border-radius: 40px;
+  }
+  
+  .main-btn .btn-text {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .main-btn .btn-icon {
+    padding: 0.8rem;
+  }
+  
+  .main-btn .btn-icon i {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*--------------------------------------------------------------
 # ======= Hero Section ======= -->
@@ -180,15 +380,8 @@ body {
   }
 }
 
-a {
-  color: #149ddd;
-  text-decoration: none;
-}
 
-a:hover {
-  color: #37b3ed;
-  text-decoration: none;
-}
+
 
 /* Community tag */
 .community-tag {
@@ -600,25 +793,6 @@ a:hover {
   }
 }
 
-a {
-  color: #149ddd;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #37b3ed;
-  text-decoration: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Raleway", sans-serif;
-}
-
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -861,7 +1035,6 @@ section {
   transform: translateX(-50%);
 }
 
-
 .about .content h3 {
   font-weight: 700;
   font-size: 26px;
@@ -914,7 +1087,6 @@ section {
 }
 
 .about .content .personal-info li a {
-  
   text-decoration: inline;
   transition: color 0.3s ease;
 }
@@ -978,10 +1150,8 @@ section {
 .profile-image-wrapper:hover .profile-image-front img,
 .profile-image-wrapper:hover .profile-image-back img {
   transform: scale(1.05);
-  filter: 
-  drop-shadow(0 0 4px #0d0d0d) 
-  drop-shadow(0 0 8px #0d0d0d)
-  drop-shadow(0 0 12px #0d0d0d);
+  filter: drop-shadow(0 0 4px #0d0d0d) drop-shadow(0 0 8px #0d0d0d)
+    drop-shadow(0 0 12px #0d0d0d);
 }
 
 /* Tooltip hướng dẫn */
@@ -1116,51 +1286,6 @@ section {
 --------------------------------------------------------------*/
 
 /* ======= Skills Section Styling ======= */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*--------------------------------------------------------------
 # Resume
@@ -1470,7 +1595,7 @@ section {
   opacity: 0.6;
 }
 
-.section-title  {
+.section-title {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 800;
   background: linear-gradient(135deg, #7877c6, #ff6784, #00d4ff);
@@ -1679,8 +1804,6 @@ section {
   overflow: hidden;
   pointer-events: none;
 }
-
-
 
 /* Responsive Design */
 @media (max-width: 768px) {
