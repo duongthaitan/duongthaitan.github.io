@@ -61,9 +61,9 @@ function updateProgress() {
 
   // Tiếp tục loading hoặc ẩn khi xong
   if (progress < 100) {
-    setTimeout(updateProgress, 20); // mượt hơn
+    setTimeout(updateProgress, 10); // mượt hơn
   } else {
-    setTimeout(hideLoadingScreen, 400);
+    setTimeout(hideLoadingScreen, 200);
   }
 }
 
@@ -98,7 +98,7 @@ function updateProgress() {
         if (dust.parentNode) {
           dust.remove();
         }
-      }, 1500);
+      }, 1000);
     }
   }, 1000);
 });
