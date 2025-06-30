@@ -30,39 +30,44 @@ document.addEventListener("DOMContentLoaded", function () {
       loadingScreen.appendChild(dust);
     }
   }
+let progress = 0;
+const loadingTexts = [
+  "INITIALIZING COSMOS...",
+  "LOADING GALAXIES...",
+  "CALIBRATING PLANETS...",
+  "SYNCHRONIZING ORBITS...",
+  "IGNITING STARS...",
+  "FINALIZING UNIVERSE...",
+];
 
-  // Simulate loading progress
-  let progress = 0;
-  const loadingTexts = [
-    "INITIALIZING COSMOS...",
-    "LOADING GALAXIES...",
-    "CALIBRATING PLANETS...",
-    "SYNCHRONIZING ORBITS...",
-    "IGNITING STARS...",
-    "FINALIZING UNIVERSE...",
-  ];
+// Cache phần tử DOM để tránh truy cập lặp lại
+const loadingTextElement = document.querySelector(".loading-text");
 
-  function updateProgress() {
-    const increment = Math.random() * 15 + 5;
-    progress = Math.min(progress + increment, 100);
+function updateProgress() {
+  progress += 1;
 
-    progressBar.style.width = progress + "%";
-    loadingPercentage.textContent = Math.floor(progress) + "%";
+  // Cập nhật thanh tiến trình và phần trăm
+  progressBar.style.width = `${progress}%`;
+  loadingPercentage.textContent = `${progress}%`;
 
-    // Update loading text based on progress
-    const textIndex = Math.floor((progress / 100) * loadingTexts.length);
-    if (textIndex < loadingTexts.length) {
-      document.querySelector(".loading-text").textContent =
-        loadingTexts[textIndex];
-    }
+  // Chỉ cập nhật text khi chuyển giai đoạn
+  const totalStages = loadingTexts.length;
+  const stageSize = Math.ceil(100 / totalStages);
+  const textIndex = Math.floor(progress / stageSize);
 
-    if (progress < 100) {
-      setTimeout(updateProgress, Math.random() * 200 + 100);
-    } else {
-      // Loading complete
-      setTimeout(hideLoadingScreen, 100);
-    }
+  if (textIndex < totalStages) {
+    loadingTextElement.textContent = loadingTexts[textIndex];
   }
+
+  // Tiếp tục loading hoặc ẩn khi xong
+  if (progress < 100) {
+    setTimeout(updateProgress, 20); // mượt hơn
+  } else {
+    setTimeout(hideLoadingScreen, 400);
+  }
+}
+
+
 
   function hideLoadingScreen() {
     loadingScreen.classList.add("fade-out");
@@ -70,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
       loadingScreen.style.display = "none";
       mainContent.classList.add("show");
-    }, 1000);
+    }, 3000);
   }
 
   // Initialize
@@ -93,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (dust.parentNode) {
           dust.remove();
         }
-      }, 15000);
+      }, 1500);
     }
   }, 1000);
 });

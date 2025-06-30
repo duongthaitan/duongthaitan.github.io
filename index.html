@@ -35,7 +35,7 @@
     <link href="assets/css/style.css" rel="stylesheet" />
     <link href="assets/css/cursor.css" rel="stylesheet" />
     <link href="assets/css/back-to-top.css" rel="stylesheet" />
-    <link href="assets/css/skills.css" rel="stylesheet" />
+
     <link href="assets/css/loadingPage.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -344,49 +344,33 @@
     </section>
     <!-- End Hero -->
 
-    <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
-      <!-- Floating Stars Background -->
-      <div class="stars-background"></div>
-
-      <!-- Galaxy Animation -->
-      <div class="galaxy-container">
-        <!-- Central Star -->
-        <div class="central-star"></div>
-
-        <!-- Orbit Paths with Planets -->
-        <div class="orbit orbit-1">
-          <div class="planet planet-1"></div>
-        </div>
-
-        <div class="orbit orbit-2">
-          <div class="planet planet-2"></div>
-        </div>
-
-        <div class="orbit orbit-3">
-          <div class="planet planet-3"></div>
-        </div>
-
-        <div class="orbit orbit-4">
-          <div class="planet planet-4"></div>
-        </div>
-
-        <div class="orbit orbit-5">
-          <div class="planet planet-5"></div>
-        </div>
+<!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="stars-background"></div>
+    <div class="galaxy-container">
+      <div class="central-star"></div>
+      <div class="orbit orbit-1">
+        <div class="planet planet-1"></div>
       </div>
-
-      <!-- Loading Text -->
-      <div class="loading-text">LOADING UNIVERSE</div>
-
-      <!-- Progress Bar -->
-      <div class="progress-container">
-        <div class="progress-bar" id="progressBar"></div>
+      <div class="orbit orbit-2">
+        <div class="planet planet-2"></div>
       </div>
-
-      <!-- Loading Percentage -->
-      <div class="loading-percentage" id="loadingPercentage">0%</div>
+      <div class="orbit orbit-3">
+        <div class="planet planet-3"></div>
+      </div>
+      <div class="orbit orbit-4">
+        <div class="planet planet-4"></div>
+      </div>
+      <div class="orbit orbit-5">
+        <div class="planet planet-5"></div>
+      </div>
     </div>
+    <div class="loading-text">LOADING UNIVERSE</div>
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <div class="loading-percentage" id="loadingPercentage">0%</div>
+  </div>
 
     <main id="main">
       <section id="about" class="about">
@@ -925,7 +909,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script
       type="text/javascript"
-      src="https://cdn.emailjs.com/dist/email.min.js"></script>
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
@@ -944,11 +928,9 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/loadingPage.js"></script>
     <script src="assets/js/cursor.js"></script>
     <script src="assets/js/back-to-top.js"></script>
-    <script src="assets/js/loadingPage.js"></script>
-    <script src="assets/js/grab-animation.js"></script>
     <script src="assets/js/success.js"></script>
-    <script src="assets/js/skills.js"></script>
   </body>
 </html>
